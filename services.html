@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N-Expert.ai - AI Consulting &amp; Services</title>
+    <meta name="description"
+        content="Expert AI consulting and services. Transform your business with intelligent AI solutions, agent development, and multi-agent systems.">
+
+    <!-- Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Google Fonts (non-blocking) -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <!-- Font Awesome (non-blocking) -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </noscript>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/services.css">
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-brain"></i></div>
+                <span>N-Expert<span class="ai">.ai</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="https://linkedin.com" target="_blank" class="linkedin-icon" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a>
+                <button class="btn-primary">Get Started</button>
+            </div>
+            <div class="mobile-menu-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><button class="btn-primary" style="width: 100%;">Get Started</button></li>
+        </ul>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="deco-circle"></div>
+        <div class="deco-circle"></div>
+        <div class="deco-circle"></div>
+        <div class="container">
+            <div class="breadcrumb reveal">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                Services
+            </div>
+            <h1 class="page-title reveal">AI Consulting & Services</h1>
+            <p class="page-subtitle reveal">Expert guidance to transform your business with intelligent AI solutions</p>
+        </div>
+    </section>
+
+    <!-- Services Intro Section -->
+    <section class="section services-intro">
+        <div class="container">
+            <div class="intro-grid reveal">
+                <div class="intro-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=60"
+                        alt="AI Consulting Team" loading="lazy">
+                    <div class="intro-image-label">Guiding Your AI Transformation</div>
+                </div>
+                <div class="intro-content">
+                    <div class="section-label">OUR SERVICES</div>
+                    <h2 class="section-title">Expert Services for AI-Powered Business Growth</h2>
+                    <p>From strategy to deployment, we provide end-to-end AI consulting that turns innovation into
+                        measurable business results. Our team combines deep technical expertise with real-world business
+                        understanding.</p>
+                    <div class="stat-circles">
+                        <div class="stat-circle">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Client Satisfaction</span>
+                        </div>
+                        <div class="stat-circle">
+                            <span class="stat-number">150+</span>
+                            <span class="stat-label">Projects Delivered</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section class="section dark services-grid-section">
+        <div class="container" style="text-align: center;">
+            <div class="section-label reveal">WHAT WE OFFER</div>
+            <h2 class="section-title reveal">Comprehensive AI Services for Every Business Need</h2>
+            <div class="services-grid reveal">
+                <!-- Service Card 1 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+                    <h3>Strategy & Design</h3>
+                    <p>AI strategy assessment, roadmap creation, and solution architecture tailored to your business
+                        goals and technical landscape.</p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-robot"></i></div>
+                    <h3>Agent Development</h3>
+                    <p>Custom AI agent design, development, and deployment — from conversational bots to autonomous
+                        business assistants.</p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>MAS Implementation</h3>
+                    <p>Multi-Agent System architecture, orchestration setup, and integration with your existing
+                        workflows and tools.</p>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-handshake-angle"></i></div>
+                    <h3>Consulting & Support</h3>
+                    <p>Ongoing AI consulting, performance monitoring, and strategic guidance to maximize your AI
+                        investment.</p>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-gauge-high"></i></div>
+                    <h3>Performance Optimization</h3>
+                    <p>AI system tuning, response optimization, cost reduction, and scaling strategies for production
+                        environments.</p>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Training & Workshops</h3>
+                    <p>Team training, AI literacy workshops, and hands-on sessions to build internal AI capabilities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="section cta-banner">
+        <div class="container" style="text-align: center;">
+            <h2 class="reveal">Ready to Transform Your Business with AI?</h2>
+            <p class="reveal" style="color: var(--text-secondary); max-width: 600px; margin: 1rem auto 2rem;">Let us
+                help you unlock the power of intelligent AI systems. Schedule a free consultation today.</p>
+            <div class="cta-buttons reveal">
+                <button class="btn-primary">Schedule Consultation <i class="fas fa-arrow-right"></i></button>
+                <button class="btn-outline">View Case Studies</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why N-Expert Section -->
+    <section class="section dark why-nexpert">
+        <div class="container">
+            <div class="section-label reveal" style="text-align: center;">WHY CHOOSE US</div>
+            <h2 class="section-title reveal" style="text-align: center;">Trusted Solutions for Superior AI
+                Implementation</h2>
+            <div class="value-grid reveal">
+                <!-- Value Card 1 -->
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-shield-halved"></i></div>
+                    <div>
+                        <h4>Expert Team</h4>
+                        <p>Our team comprises certified AI professionals with years of experience in enterprise AI
+                            deployments.</p>
+                    </div>
+                </div>
+
+                <!-- Value Card 2 -->
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-microchip"></i></div>
+                    <div>
+                        <h4>Advanced Technology</h4>
+                        <p>We leverage cutting-edge AI technology and frameworks to provide robust, scalable solutions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Value Card 3 -->
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-puzzle-piece"></i></div>
+                    <div>
+                        <h4>Customized Solutions</h4>
+                        <p>We offer tailored AI strategies designed specifically for your business needs and industry
+                            requirements.</p>
+                    </div>
+                </div>
+
+                <!-- Value Card 4 -->
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-chart-pie"></i></div>
+                    <div>
+                        <h4>Proven Track Record</h4>
+                        <p>With a strong history of successfully deploying AI systems across multiple industries and use
+                            cases.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    N-Expert<span style="color: var(--accent-cyan);">.ai</span>
+                </div>
+                <p class="tagline">Where Human Expertise Meets AI Precision</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>LEGAL</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Disclaimer</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Data Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>RESOURCES</h4>
+                <ul>
+                    <li><a href="#">AI Glossary</a></li>
+                    <li><a href="#"
+                            title="This section is currently being finalized and will be available shortly as part of Phase 2 of our website launch. Thank you for your continued support.">FAQs</a>
+                        <span class="badge-pending">Pending!</span>
+                    </li>
+                    <li><a href="#">Quick Videos</a></li>
+                    <li><a href="#"
+                            title="This section is currently being finalized and will be available shortly as part of Phase 2 of our website launch. Thank you for your continued support.">Blog
+                            Posts</a>
+                        <span class="badge-pending">Pending!</span>
+                    </li>
+                    <li><a href="#">Community Impact / ConsultasNow</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>CONNECT</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Request a Demo</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Partner Program</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 N-Expert.ai · All rights reserved · McLean, VA · Serving DC, MD, VA — and beyond · A Trusted
+                AI Platform · Powered by Local Digital Works</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/shared.js"></script>
+</body>
+
+</html>

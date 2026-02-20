@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N-Expert.ai - AI Agent Solutions</title>
+    <meta name="description"
+        content="Discover our comprehensive AI agent solutions for business transformation. Five expert AI agents designed to handle customer service, sales, finance, legal, and business consulting.">
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Google Fonts (non-blocking) -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <!-- Font Awesome (non-blocking) -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </noscript>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/solutions.css">
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-brain"></i></div>
+                <span>N-Expert<span class="ai">.ai</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html" class="active">Solutions</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="https://linkedin.com" target="_blank" class="linkedin-icon" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a>
+                <button class="btn-primary">Get Started</button>
+            </div>
+            <div class="mobile-menu-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="solutions.html" class="active">Solutions</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><button class="btn-primary" style="width: 100%;">Get Started</button></li>
+        </ul>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="deco-circle"></div>
+        <div class="deco-circle"></div>
+        <div class="deco-circle"></div>
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> Solutions</div>
+            <h1>Our AI Agent Solutions</h1>
+            <p>Comprehensive AI solutions for complete business transformation</p>
+        </div>
+    </section>
+
+    <!-- Solutions Intro -->
+    <section class="section solutions-intro">
+        <div class="container" style="text-align: center;">
+            <div class="section-label reveal">MEET YOUR AI TEAM</div>
+            <h2 class="section-title reveal">Five Expert AI Agents, One Powerful System</h2>
+            <p class="section-subtitle reveal" style="margin: 0 auto;">Each agent is purpose-built to handle specific
+                business functions — from customer service to legal compliance. Click any card to learn more, or try a
+                live demo.</p>
+        </div>
+    </section>
+
+    <!-- Bot Cards Grid -->
+    <section class="section bot-cards-section">
+        <div class="container">
+            <div class="bot-cards-grid">
+
+                <!-- Bot 1: Business Expert Agent -->
+                <div class="bot-card reveal" data-bot="business" data-color="#1DA1F2">
+                    <div class="bot-card-inner">
+                        <div class="bot-card-front" style="border-top-color: #1DA1F2;">
+                            <div class="bot-icon" style="background: #1DA1F2;"><i class="fas fa-handshake"></i></div>
+                            <h3>Business Expert Agent</h3>
+                            <p>Your entry-level AI business consultant</p>
+                            <span class="flip-hint"><i class="fas fa-sync-alt"></i> Click to learn more</span>
+                        </div>
+                        <div class="bot-card-back" style="border-top-color: #1DA1F2;">
+                            <h3>Business Expert Agent</h3>
+                            <p class="bot-description">Handles initial client intake, business assessment, scheduling,
+                                and general business inquiries. Perfect for small businesses starting their AI journey.
+                            </p>
+                            <ul class="bot-features">
+                                <li><i class="fas fa-check"></i> Client Intake Automation</li>
+                                <li><i class="fas fa-check"></i> Business Assessment</li>
+                                <li><i class="fas fa-check"></i> Meeting Scheduling</li>
+                                <li><i class="fas fa-check"></i> FAQ Handling</li>
+                            </ul>
+                            <div class="bot-tech">
+                                <span class="tech-badge">OpenAI</span>
+                                <span class="tech-badge">n8n</span>
+                                <span class="tech-badge">Supabase</span>
+                            </div>
+                            <button class="btn-primary bot-demo-btn" data-bot="business"
+                                data-name="Business Expert Agent" data-icon="fa-handshake" data-color="#1DA1F2">Try
+                                Demo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bot 2: Customer Service Expert -->
+                <div class="bot-card reveal" data-bot="customer" data-color="#10B981">
+                    <div class="bot-card-inner">
+                        <div class="bot-card-front" style="border-top-color: #10B981;">
+                            <div class="bot-icon" style="background: #10B981;"><i class="fas fa-headset"></i></div>
+                            <h3>Customer Service Expert</h3>
+                            <p>24/7 intelligent customer support</p>
+                            <span class="flip-hint"><i class="fas fa-sync-alt"></i> Click to learn more</span>
+                        </div>
+                        <div class="bot-card-back" style="border-top-color: #10B981;">
+                            <h3>Customer Service Expert</h3>
+                            <p class="bot-description">Manages customer inquiries, ticket routing, escalation workflows,
+                                and satisfaction tracking with empathetic, context-aware responses.</p>
+                            <ul class="bot-features">
+                                <li><i class="fas fa-check"></i> Ticket Management</li>
+                                <li><i class="fas fa-check"></i> Smart Routing</li>
+                                <li><i class="fas fa-check"></i> Escalation Logic</li>
+                                <li><i class="fas fa-check"></i> Satisfaction Tracking</li>
+                            </ul>
+                            <div class="bot-tech">
+                                <span class="tech-badge">OpenAI</span>
+                                <span class="tech-badge">n8n</span>
+                                <span class="tech-badge">WhatsApp API</span>
+                            </div>
+                            <button class="btn-primary bot-demo-btn" data-bot="customer"
+                                data-name="Customer Service Expert" data-icon="fa-headset" data-color="#10B981">Try
+                                Demo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bot 3: Sales & Marketing Expert -->
+                <div class="bot-card reveal" data-bot="sales" data-color="#F59E0B">
+                    <div class="bot-card-inner">
+                        <div class="bot-card-front" style="border-top-color: #F59E0B;">
+                            <div class="bot-icon" style="background: #F59E0B;"><i class="fas fa-chart-line"></i></div>
+                            <h3>Sales & Marketing Expert</h3>
+                            <p>AI-powered sales acceleration</p>
+                            <span class="flip-hint"><i class="fas fa-sync-alt"></i> Click to learn more</span>
+                        </div>
+                        <div class="bot-card-back" style="border-top-color: #F59E0B;">
+                            <h3>Sales & Marketing Expert</h3>
+                            <p class="bot-description">Qualifies leads, nurtures prospects, automates follow-ups, and
+                                provides real-time sales analytics to maximize conversion rates.</p>
+                            <ul class="bot-features">
+                                <li><i class="fas fa-check"></i> Lead Qualification</li>
+                                <li><i class="fas fa-check"></i> Automated Follow-ups</li>
+                                <li><i class="fas fa-check"></i> Pipeline Analytics</li>
+                                <li><i class="fas fa-check"></i> Campaign Optimization</li>
+                            </ul>
+                            <div class="bot-tech">
+                                <span class="tech-badge">OpenAI</span>
+                                <span class="tech-badge">n8n</span>
+                                <span class="tech-badge">CRM Integration</span>
+                            </div>
+                            <button class="btn-primary bot-demo-btn" data-bot="sales"
+                                data-name="Sales & Marketing Expert" data-icon="fa-chart-line" data-color="#F59E0B">Try
+                                Demo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bot 4: Finance & Admin Expert -->
+                <div class="bot-card reveal" data-bot="finance" data-color="#8B5CF6">
+                    <div class="bot-card-inner">
+                        <div class="bot-card-front" style="border-top-color: #8B5CF6;">
+                            <div class="bot-icon" style="background: #8B5CF6;"><i
+                                    class="fas fa-file-invoice-dollar"></i></div>
+                            <h3>Finance & Admin Expert</h3>
+                            <p>Smart financial operations assistant</p>
+                            <span class="flip-hint"><i class="fas fa-sync-alt"></i> Click to learn more</span>
+                        </div>
+                        <div class="bot-card-back" style="border-top-color: #8B5CF6;">
+                            <h3>Finance & Admin Expert</h3>
+                            <p class="bot-description">Automates invoicing, expense tracking, financial reporting, and
+                                administrative workflows with precision and compliance.</p>
+                            <ul class="bot-features">
+                                <li><i class="fas fa-check"></i> Invoice Automation</li>
+                                <li><i class="fas fa-check"></i> Expense Tracking</li>
+                                <li><i class="fas fa-check"></i> Financial Reports</li>
+                                <li><i class="fas fa-check"></i> Compliance Checks</li>
+                            </ul>
+                            <div class="bot-tech">
+                                <span class="tech-badge">OpenAI</span>
+                                <span class="tech-badge">n8n</span>
+                                <span class="tech-badge">QuickBooks API</span>
+                            </div>
+                            <button class="btn-primary bot-demo-btn" data-bot="finance"
+                                data-name="Finance & Admin Expert" data-icon="fa-file-invoice-dollar"
+                                data-color="#8B5CF6">Try Demo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bot 5: Legal Expert Agent -->
+                <div class="bot-card reveal" data-bot="legal" data-color="#E63946">
+                    <div class="bot-card-inner">
+                        <div class="bot-card-front" style="border-top-color: #E63946;">
+                            <div class="bot-icon" style="background: #E63946;"><i class="fas fa-scale-balanced"></i>
+                            </div>
+                            <h3>Legal Expert Agent</h3>
+                            <p>AI-powered legal assistance</p>
+                            <span class="flip-hint"><i class="fas fa-sync-alt"></i> Click to learn more</span>
+                        </div>
+                        <div class="bot-card-back" style="border-top-color: #E63946;">
+                            <h3>Legal Expert Agent</h3>
+                            <p class="bot-description">Supports contract review, compliance monitoring, legal research,
+                                and document drafting with JurisMind™ RAG technology.</p>
+                            <ul class="bot-features">
+                                <li><i class="fas fa-check"></i> Contract Review</li>
+                                <li><i class="fas fa-check"></i> Compliance Monitoring</li>
+                                <li><i class="fas fa-check"></i> Legal Research</li>
+                                <li><i class="fas fa-check"></i> Document Drafting</li>
+                            </ul>
+                            <div class="bot-tech">
+                                <span class="tech-badge">OpenAI</span>
+                                <span class="tech-badge">n8n</span>
+                                <span class="tech-badge">JurisMind™</span>
+                            </div>
+                            <button class="btn-primary bot-demo-btn" data-bot="legal" data-name="Legal Expert Agent"
+                                data-icon="fa-scale-balanced" data-color="#E63946">Try Demo</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Modal -->
+    <div class="demo-modal-overlay" id="demo-modal">
+        <div class="demo-modal">
+            <button class="demo-modal-close" id="demo-modal-close"><i class="fas fa-times"></i></button>
+            <div class="demo-modal-header" id="demo-modal-header">
+                <div class="demo-modal-icon" id="demo-modal-icon"><i class="fas fa-robot"></i></div>
+                <h3 id="demo-modal-title">AI Agent Demo</h3>
+            </div>
+
+            <!-- Custom Chat Area (webhook mode) -->
+            <div class="demo-chat-area" id="demo-chat-area">
+                <div class="demo-modal-chat" id="demo-modal-chat">
+                    <div class="chat-message bot-message">
+                        <p>Hello! I'm your AI assistant. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Widget Container (iframe mode) -->
+            <div class="demo-chat-widget" id="demo-chat-widget"></div>
+
+            <!-- Input Area (webhook mode only) -->
+            <div class="demo-modal-input" id="demo-input-area">
+                <input type="text" id="demo-input" placeholder="Type a message...">
+                <button class="btn-primary" id="demo-send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+
+            <!-- Exit Confirmation Dialog -->
+            <div class="confirm-exit-overlay" id="confirm-exit-overlay">
+                <div class="confirm-exit-dialog">
+                    <div class="confirm-exit-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <h4>Are you sure?</h4>
+                    <p>You are about to leave the conversation. Your chat history will be lost.</p>
+                    <div class="confirm-exit-buttons">
+                        <button class="btn-outline" id="confirm-exit-no">Continue Chat</button>
+                        <button class="btn-red" id="confirm-exit-yes">Leave Conversation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    N-Expert<span style="color: var(--accent-cyan);">.ai</span>
+                </div>
+                <p class="tagline">Where Human Expertise Meets AI Precision</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>LEGAL</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Disclaimer</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Data Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>RESOURCES</h4>
+                <ul>
+                    <li><a href="#">AI Glossary</a></li>
+                    <li><a href="#"
+                            title="This section is currently being finalized and will be available shortly as part of Phase 2 of our website launch. Thank you for your continued support.">FAQs</a>
+                        <span class="badge-pending">Pending!</span>
+                    </li>
+                    <li><a href="#">Quick Videos</a></li>
+                    <li><a href="#"
+                            title="This section is currently being finalized and will be available shortly as part of Phase 2 of our website launch. Thank you for your continued support.">Blog
+                            Posts</a>
+                        <span class="badge-pending">Pending!</span>
+                    </li>
+                    <li><a href="#">Community Impact / ConsultasNow</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>CONNECT</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Request a Demo</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Partner Program</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 N-Expert.ai · All rights reserved · McLean, VA · Serving DC, MD, VA — and beyond · A Trusted
+                AI Platform · Powered by Local Digital Works</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/shared.js"></script>
+    <script src="js/solutions.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="N-Expert.ai - Enterprise AI consulting specializing in Multi-Agent Systems. Transform your business with coordinated AI solutions.">
+    <title>N-Expert.ai - Multi-Agent AI Systems for Enterprise</title>
+
+    <!-- Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Google Fonts (non-blocking) -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <!-- Font Awesome (non-blocking) -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </noscript>
+
+    <!-- Shared & Home CSS -->
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <span>N-Expert<span class="ai">.ai</span></span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+
+            <div class="nav-right" style="display: flex; gap: 0.8rem; align-items: center;">
+                <a href="https://facebook.com" target="_blank" class="social-icon-header" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon-header" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+
+            <div class="mobile-menu-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-particles" id="particles"></div>
+
+        <div class="container">
+            <div class="hero-content-wrapper">
+                <div class="hero-text">
+                    <div class="hero-label" style="margin-bottom: 0.5rem; letter-spacing: 1px;">AI-POWERED
+                        BUSINESS TRANSFORMATION</div>
+                    <h1 class=""
+                        style="font-size: clamp(3.2rem, 6vw, 4.8rem); line-height: 1.1; margin-bottom: 0; font-weight: 800;">
+                        Transforming<br>Your Business<br>with Multi-Agent<br>Systems
+                    </h1>
+                </div>
+
+                <div class="hero-visual">
+                    <img src="images/hero-section-before-and-after-image.webp" alt="Before and After AI Transformation"
+                        style="width: 100%; border-radius: 12px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6); object-fit: cover;">
+                </div>
+            </div>
+
+            <div class="hero-features-bar">
+                <div class="feature-bar-item">
+                    <div class="feature-icon-complex">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Generative & Agentic Solutions</h3>
+                        <p>24/7 AI assistants that engage customers, capture leads, and support your business
+                            efficiently.</p>
+                        <a href="#" class="btn-primary"
+                            style="display: inline-block; padding: 0.6rem 1.8rem; font-size: 0.9rem; text-decoration: none; border-radius: 6px;">Learn
+                            more</a>
+                    </div>
+                </div>
+
+                <div class="feature-divider"></div>
+
+                <div class="feature-bar-item">
+                    <div class="feature-icon-complex">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>AI Multi-Agent Systems (MAS)</h3>
+                        <p>Multiple agents working together to automate your complex workflows, sales pipelines, and
+                            admin tasks.</p>
+                        <a href="#" class="btn-primary"
+                            style="display: inline-block; padding: 0.6rem 1.8rem; font-size: 0.9rem; text-decoration: none; border-radius: 6px;">Learn
+                            more</a>
+                    </div>
+                </div>
+
+                <div class="feature-divider"></div>
+
+                <div class="feature-bar-item">
+                    <div class="feature-icon-complex">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>AI Solutions & Services</h3>
+                        <p>Custom AI architecture and consulting for businesses with unique technical and integration
+                            needs.</p>
+                        <a href="#" class="btn-primary"
+                            style="display: inline-block; padding: 0.6rem 1.8rem; font-size: 0.9rem; text-decoration: none; border-radius: 6px;">Learn
+                            more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Solutions Intro -->
+    <section class="section ai-intro" id="solutions">
+        <div class="container">
+            <div class="ai-intro-hero reveal">
+                <img src="images/section-3-ai-solutions-designed-to-work-like-a-team.webp"
+                    alt="Business team with AI technology" loading="lazy">
+                <div class="ai-intro-overlay">
+                    <div class="section-label">FOR BUSINESSES READY TO MODERNIZE</div>
+                    <h2 class="section-title">AI Solutions Designed to Work<br>Like a Team — Not Just a Tool</h2>
+                    <div class="intro-text">
+                        <p>Most AI tools work in isolation. We build coordinated AI systems where specialized agents
+                            collaborate across tasks, departments, and workflows. The result is automation that feels
+                            intentional, scalable, and aligned with real business operations — not disconnected
+                            features.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Generative & Agentic Solutions -->
+    <section class="section gen-agentic" id="services">
+        <div class="gen-agentic-bg"></div>
+        <div class="container">
+            <div class="red-header reveal">
+                <h2>Generative & Agentic Solutions</h2>
+                <p>Automate. Create. Grow.</p>
+            </div>
+
+            <div class="hexagon-container agent-hex-container reveal">
+                <div class="agent-hex-grid">
+                    <!-- SVG connector lines from center to each hex -->
+                    <svg class="hex-connectors" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:rgba(29,161,242,0.6)" />
+                                <stop offset="100%" style="stop-color:rgba(29,161,242,0.1)" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Center at 350,350. Lines to each hex visual center -->
+                        <g stroke="#1da1f2" stroke-width="2" stroke-dasharray="4, 8" opacity="0.6">
+                            <line x1="350" y1="350" x2="350" y2="100" />
+                            <line x1="350" y1="350" x2="527" y2="173" />
+                            <line x1="350" y1="350" x2="600" y2="350" />
+                            <line x1="350" y1="350" x2="527" y2="527" />
+                            <line x1="350" y1="350" x2="350" y2="600" />
+                            <line x1="350" y1="350" x2="173" y2="527" />
+                            <line x1="350" y1="350" x2="100" y2="350" />
+                            <line x1="350" y1="350" x2="173" y2="173" />
+                        </g>
+                        <!-- Inner bright rings/particles to simulate data flow points -->
+                        <g fill="#1da1f2" opacity="0.9">
+                            <circle cx="350" cy="190" r="3" />
+                            <circle cx="460" cy="240" r="3" />
+                            <circle cx="500" cy="350" r="3" />
+                            <circle cx="460" cy="460" r="3" />
+                            <circle cx="350" cy="480" r="3" />
+                            <circle cx="240" cy="460" r="3" />
+                            <circle cx="200" cy="350" r="3" />
+                            <circle cx="240" cy="240" r="3" />
+                        </g>
+                    </svg>
+                    <!-- Center N-Expert hex -->
+                    <div class="agent-hex center-agent-hex">
+                        <div class="agent-hex-shape"></div>
+                        <div class="agent-hex-content">
+                            <div class="agent-hex-icon"><i class="fas fa-brain"></i></div>
+                            <div class="agent-hex-label">N</div>
+                        </div>
+                    </div>
+                    <!-- 1. Real Estate Analyst (top, 0 deg) -->
+                    <div class="agent-hex">
+                        <div class="agent-hex-shape"></div>
+                        <div class="agent-hex-content">
+                            <div class="agent-hex-icon"><i class="fas fa-home"></i></div>
+                            <div class="agent-hex-label">Real Estate<br>Analyst</div>
+                        </div>
+                    </div>
+                    <!-- 2. Construction Agent (upper-right, 45 deg) -->
+                    <div class="agent-hex">
+                        <div class="agent-hex-shape"></div>
+                        <div class="agent-hex-content">
+                            <div class="agent-hex-icon"><i class="fas fa-hard-hat"></i></div>
+                            <div class="agent-hex-label">Construction<br>Agent</div>
+                        </div>
+                    </div>
+                    <!-- 3. Insurance Claims Agent (right, 90 deg) -->
+                    <div class="agent-hex">
+                        <div class="agent-hex-shape"></div>
+                        <div class="agent-hex-content">
+                            <div class="agent-hex-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="agent-hex-label">Insurance Claims<br>Agent</div>
+                        </div>
+                    </div>
+                    <!-- 4. Meeting Scheduler Agent (lower-right, 135 deg) -->
+                    <div class="agent-hex">
+                        <div class="agent-hex-shape"></div>
+                        <div class="agent-hex-content">
+                            <div class="agent-hex-icon"><i class="fas fa-calendar-alt"></i></div>
+                            <div class="agent-hex-label">Meeting Scheduler<br>Agent</div>
+                        </div>
+                    </div>
+                    <!-- 5. Document Drafting Agent (bottom, 180 deg) -->
+                    <div class="agent-hex">
+                        <div class="agent-hex-shape"></div>
+                        <div class="agent-hex-content">
+                            <div class="agent-hex-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="agent-hex-label">Document Drafting<br>Agent</div>
+                        </div>
+                    </div>
+                    <!-- 6. Cost Analyst Agent (lower-left, 225 deg) -->
+                    <div class="agent-hex">
+                        <div class="agent-hex-shape"></div>
+                        <div class="agent-hex-content">
+                            <div class="agent-hex-icon"><i class="fas fa-calculator"></i></div>
+                            <div class="agent-hex-label">Cost Analyst<br>Agent</div>
+                        </div>
+                    </div>
+                    <!-- 7. Construction Project Coordinator (left, 270 deg) -->
+                    <div class="agent-hex">
+                        <div class="agent-hex-shape"></div>
+                        <div class="agent-hex-content">
+                            <div class="agent-hex-icon"><i class="fas fa-project-diagram"></i></div>
+                            <div class="agent-hex-label">Construction Project<br>Coordinator</div>
+                        </div>
+                    </div>
+                    <!-- 8. Legal Brief Bot (upper-left, 315 deg) -->
+                    <div class="agent-hex">
+                        <div class="agent-hex-shape"></div>
+                        <div class="agent-hex-content">
+                            <div class="agent-hex-icon"><i class="fas fa-gavel"></i></div>
+                            <div class="agent-hex-label">Legal Brief<br>Bot</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="two-column-content reveal">
+                <div class="column">
+                    <h3>Transform Your Business with Generative & Agentic AI Agents</h3>
+                    <ul>
+                        <li>AI agents that work like digital employees. Answering customers, qualifying leads, and
+                            automating workflows 24/7, so your business runs smarter in days, not months.</li>
+                        <li>Automate sales follow-ups and bookings.</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <p>Powered by N-Expert.ai's production-ready architecture and expanded through ConsultasNow™ — free
+                        AI assistants supporting the Hispanic community with immigration, housing, health, employment,
+                        and legal guidance.</p>
+                    <button class="btn-primary" style="margin-top: 1.5rem;">Meet Your AI Agent</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multi-Agent System -->
+    <section class="section mas-section dark">
+        <div class="container">
+            <div class="reveal">
+                <h2 class="section-title">What is a Multi-Agent AI System?</h2>
+                <p class="section-subtitle" style="margin: 0 auto;">A Multi-Agent System (MAS) orchestrates specialized
+                    AI Agents that collaborate, reason, and act together — transforming complex workflows into reliable,
+                    scalable business operations.</p>
+            </div>
+
+            <div class="mas-nexus-diagram reveal">
+                <!-- SVG Connections forming a complex star/web -->
+                <svg class="nexus-connections" viewBox="0 0 900 800" fill="none">
+                    <!-- Dots -->
+                    <g fill="#1da1f2" opacity="0.8">
+                        <circle cx="450" cy="400" r="4" />
+                        <circle cx="450" cy="150" r="3" />
+                        <circle cx="666" cy="275" r="3" />
+                        <circle cx="666" cy="525" r="3" />
+                        <circle cx="450" cy="650" r="3" />
+                        <circle cx="234" cy="525" r="3" />
+                        <circle cx="234" cy="275" r="3" />
+                        <!-- Inner web dots -->
+                        <circle cx="450" cy="275" r="2" />
+                        <circle cx="558" cy="337" r="2" />
+                        <circle cx="558" cy="462" r="2" />
+                        <circle cx="342" cy="462" r="2" />
+                        <circle cx="342" cy="337" r="2" />
+                    </g>
+
+                    <g stroke="rgba(29, 161, 242, 0.4)" stroke-width="1.5">
+                        <!-- Spokes to center -->
+                        <line x1="450" y1="400" x2="450" y2="150" />
+                        <line x1="450" y1="400" x2="666" y2="275" />
+                        <line x1="450" y1="400" x2="666" y2="525" />
+                        <line x1="450" y1="400" x2="450" y2="650" />
+                        <line x1="450" y1="400" x2="234" y2="525" />
+                        <line x1="450" y1="400" x2="234" y2="275" />
+
+                        <!-- Hexagon perimeter -->
+                        <line x1="450" y1="150" x2="666" y2="275" stroke-dasharray="4, 6" />
+                        <line x1="666" y1="275" x2="666" y2="525" stroke-dasharray="4, 6" />
+                        <line x1="666" y1="525" x2="450" y2="650" stroke-dasharray="4, 6" />
+                        <line x1="450" y1="650" x2="234" y2="525" stroke-dasharray="4, 6" />
+                        <line x1="234" y1="525" x2="234" y2="275" stroke-dasharray="4, 6" />
+                        <line x1="234" y1="275" x2="450" y2="150" stroke-dasharray="4, 6" />
+
+                        <!-- Inner star structure -->
+                        <line x1="450" y1="150" x2="342" y2="337" />
+                        <line x1="450" y1="150" x2="558" y2="337" />
+                        <line x1="666" y1="275" x2="450" y2="275" />
+                        <line x1="666" y1="275" x2="558" y2="462" />
+                        <line x1="666" y1="525" x2="558" y2="337" />
+                        <line x1="666" y1="525" x2="450" y2="525" />
+                        <line x1="450" y1="650" x2="558" y2="462" />
+                        <line x1="450" y1="650" x2="342" y2="462" />
+                        <line x1="234" y1="525" x2="342" y2="337" />
+                        <line x1="234" y1="525" x2="450" y2="525" />
+                        <line x1="234" y1="275" x2="450" y2="275" />
+                        <line x1="234" y1="275" x2="342" y2="462" />
+                    </g>
+                </svg>
+
+                <!-- Center Node -->
+                <div class="nexus-center">
+                    <div class="nexus-center-label">AI<br>ORCHESTRATOR</div>
+                </div>
+
+                <!-- 6 Surrounding Nodes -->
+                <div class="nexus-node" style="top: 150px; left: 450px;">
+                    <div class="nexus-icon"><i class="fas fa-brain"></i></div>
+                </div>
+                <!-- Perception (Head/Cog) -->
+                <div class="nexus-node" style="top: 275px; left: 666px;">
+                    <div class="nexus-icon"><i class="fas fa-eye"></i></div>
+                </div>
+                <!-- Communication (Chat/Cog) -->
+                <div class="nexus-node" style="top: 525px; left: 666px;">
+                    <div class="nexus-icon"><i class="fas fa-comments"></i></div>
+                </div>
+                <!-- Robot arm -->
+                <div class="nexus-node" style="top: 650px; left: 450px;">
+                    <div class="nexus-icon"><i class="fas fa-robot"></i></div>
+                </div>
+                <!-- Action Agent -->
+                <div class="nexus-node" style="top: 525px; left: 234px;">
+                    <div class="nexus-text-node">ACTION<br>AGENT</div>
+                </div>
+                <!-- Sensing (Magnifying Glass) -->
+                <div class="nexus-node" style="top: 275px; left: 234px;">
+                    <div class="nexus-icon"><i class="fas fa-search"></i></div>
+                </div>
+
+                <!-- Floating Labels matching reference -->
+                <div class="nexus-label label-inputs">
+                    <h4>Inputs</h4>
+                    <p>(User Request,<br>Real-time Data)</p>
+                </div>
+                <div class="nexus-label label-sensing">
+                    <h4>Sensing<br>Agent</h4>
+                    <p>Gathers data<br>and signals</p>
+                </div>
+                <div class="nexus-label label-perception">
+                    <h4>Perception<br>Agent</h4>
+                    <p>Interprets and<br>understands inputs</p>
+                </div>
+                <div class="nexus-label label-communication">
+                    <h4>Communication<br>Agent</h4>
+                    <p>Coordinates<br>between agents</p>
+                </div>
+                <div class="nexus-label label-reasoning">
+                    <h4>Reasoning<br>Agent</h4>
+                    <p>Plans and<br>evaluates actions</p>
+                </div>
+                <div class="nexus-label label-outputs">
+                    <h4>Outputs</h4>
+                    <p>(Solutions,<br>Actions, Insights)</p>
+                </div>
+                <div class="nexus-label label-shared">
+                    <h4>Shared Environment</h4>
+                </div>
+
+                <!-- Connector arrows for labels using absolute positioning -->
+                <div class="nexus-arrow arrow-inputs"></div>
+                <div class="nexus-arrow arrow-outputs"></div>
+                <div class="nexus-arrow arrow-shared-left"></div>
+                <div class="nexus-arrow arrow-shared-right"></div>
+            </div>
+
+            <div class="reveal" style="margin-top: 5rem; text-align: center;">
+                <div class="section-label">WHEN ONE AI AGENT ISN'T ENOUGH</div>
+                <h2 class="section-title">You Need a System that Thinks Together</h2>
+                <p class="section-subtitle" style="margin: 0 auto 4rem; max-width: 800px;">N-Expert.ai builds AI
+                    Multi-Agent
+                    Systems (MAS) that coordinate specialized agents to plan, decide, and execute complex workflows —
+                    turning AI into operational infrastructure, not just a feature.</p>
+            </div>
+
+            <div class="features-grid reveal"
+                style="max-width: 950px; margin: 0 auto; padding: 0 1rem; align-items: stretch;">
+                <!-- Left Column Group -->
+                <div class="feature-col" style="display: flex; flex-direction: column; gap: 2.5rem;">
+                    <div class="feature-item">
+                        <h4>Multi-Agent Collaboration</h4>
+                        <p>Task delegation across specialized agents</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Structured Decision-Making</h4>
+                        <p>Reasoning and intelligent planning</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Governance & Compliance</h4>
+                        <p>Auditability and human oversight</p>
+                    </div>
+
+                    <!-- Left Button -->
+                    <div class="feature-item" style="margin-top: auto; padding-top: 1.5rem;">
+                        <button class="btn-primary"
+                            style="padding: 0.6rem 2rem; border-radius: 6px; font-weight: 700;">Explore MAS</button>
+                    </div>
+                </div>
+
+                <!-- Right Column Group -->
+                <div class="feature-col" style="display: flex; flex-direction: column; gap: 2.5rem;">
+                    <div class="feature-item">
+                        <h4>Workflow Orchestration</h4>
+                        <p>End-to-end process automation</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Knowledge-Driven Intelligence (JurisMind™)</h4>
+                        <p>RAG-powered insights</p>
+                    </div>
+
+                    <!-- Right Separator and Button -->
+                    <div style="margin-top: auto;">
+                        <div
+                            style="width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.2); margin-bottom: 1.5rem;">
+                        </div>
+                        <div class="feature-item">
+                            <button class="btn-primary"
+                                style="padding: 0.6rem 2rem; border-radius: 6px; font-weight: 700;">See
+                                JurisMind™</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Consulting & Support -->
+    <section class="section consulting">
+        <div class="container">
+            <div class="consulting-header reveal">
+                <h2 class="section-title">AI Consulting & Support</h2>
+                <p class="section-subtitle">That Turns Innovation Into Business Results</p>
+            </div>
+
+            <div class="consulting-diagram reveal">
+                <!-- Left Panel -->
+                <div class="consulting-panel panel-left">
+                    <h3 class="panel-title">OUR PROCESS</h3>
+                    <div class="panel-items panel-items-left">
+                        <div class="panel-item">
+                            <div class="panel-icon"><i class="fas fa-search"></i></div>
+                            <span>Strategy &amp; Design</span>
+                        </div>
+                        <div class="panel-item">
+                            <div class="panel-icon"><i class="fas fa-level-up-alt"></i></div>
+                            <span>Implementation:<br>Roadmap to ROI</span>
+                        </div>
+                        <div class="panel-item">
+                            <div class="panel-icon"><i class="fas fa-chart-bar"></i></div>
+                            <span>Performance &amp;<br>Compliance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Left Circuit Connector -->
+                <div class="circuit-connector connector-left" aria-hidden="true">
+                    <div class="circuit-trunk"></div>
+                    <div class="circuit-branch branch-top">
+                        <span class="circuit-dot"></span>
+                    </div>
+                    <div class="circuit-branch branch-mid">
+                        <span class="circuit-dot"></span>
+                    </div>
+                    <div class="circuit-branch branch-bot">
+                        <span class="circuit-dot"></span>
+                    </div>
+                </div>
+
+                <!-- Center Hexagon -->
+                <div class="consulting-hex">
+                    <div class="consulting-hex-shape"></div>
+                    <div class="consulting-hex-content">
+                        <div class="consulting-hex-icon">
+                            <i class="fas fa-arrow-up consulting-hex-arrow"></i>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h4>Navigate.<br>Optimize.<br>Scale.</h4>
+                    </div>
+                </div>
+
+                <!-- Right Circuit Connector -->
+                <div class="circuit-connector connector-right" aria-hidden="true">
+                    <div class="circuit-trunk"></div>
+                    <div class="circuit-branch branch-top">
+                        <span class="circuit-dot"></span>
+                    </div>
+                    <div class="circuit-branch branch-mid">
+                        <span class="circuit-dot"></span>
+                    </div>
+                    <div class="circuit-branch branch-bot">
+                        <span class="circuit-dot"></span>
+                    </div>
+                </div>
+
+                <!-- Right Panel -->
+                <div class="consulting-panel panel-right">
+                    <h3 class="panel-title">WHAT WE DELIVER</h3>
+                    <div class="panel-items panel-items-right">
+                        <div class="panel-item">
+                            <div class="panel-icon"><i class="fas fa-shield-alt"></i></div>
+                            <span>Intelligent<br>Agents</span>
+                        </div>
+                        <div class="panel-item">
+                            <div class="panel-icon"><i class="fas fa-project-diagram"></i></div>
+                            <span>Multi-Agent<br>Systems (MAS)</span>
+                        </div>
+                        <div class="panel-item">
+                            <div class="panel-icon"><i class="fas fa-bezier-curve"></i></div>
+                            <span>Measurable<br>Efficiency</span>
+                        </div>
+                        <div class="panel-item">
+                            <div class="panel-icon"><i class="fas fa-bullseye"></i></div>
+                            <span>Measurable<br>Growth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal" style="text-align: center; max-width: 900px; margin: 0 auto 3rem;">
+                <p class="section-subtitle">We don't just implement AI — we help you master it. Whether you're deploying
+                    autonomous AI agents or complex Multi-Agent systems, our consulting ensures AI becomes a business
+                    asset, not a risky experiment.</p>
+            </div>
+
+            <div class="reveal" style="text-align: center; margin: 4rem 0 2rem;">
+                <h3 style="font-size: 2rem; margin-bottom: 2rem;">Our Commitment</h3>
+            </div>
+
+            <div class="commitment-cards reveal">
+                <div class="commitment-card">
+                    <div class="commitment-icon">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <h4>Built for Real<br>Business</h4>
+                </div>
+                <div class="commitment-card">
+                    <div class="commitment-icon">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h4>Designed for ROI<br>Not Experimentation</h4>
+                </div>
+                <div class="commitment-card">
+                    <div class="commitment-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h4>Long-Term<br>AI Partnership</h4>
+                </div>
+            </div>
+
+            <div class="cta-buttons reveal">
+                <button class="btn-primary" style="padding: 0.8rem 2.5rem; border-radius: 8px;">Learn more</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Where AI Meets Business -->
+    <section class="section ai-business">
+        <div class="container">
+            <div class="reveal">
+                <h2 class="section-title">Where Intelligent AI Meets Real Business Operations</h2>
+                <p class="section-subtitle" style="margin: 1.5rem auto 3rem;">Powerful AI solutions are only valuable
+                    when they fit the real world. Our AI agents and multi-agent systems are designed to adapt to real
+                    business environments—not generic use cases. From professional offices to highly regulated
+                    industries. N-Expert.ai delivers practical AI solutions where they matter most.</p>
+            </div>
+
+            <div class="mas-model-diagram reveal">
+                <svg class="hex-connections" viewBox="0 0 800 500" fill="none">
+                    <!-- Top Line -->
+                    <line x1="400" y1="210" x2="400" y2="100" stroke="#1da1f2" stroke-width="2" />
+                    <circle cx="400" cy="210" r="3" fill="#1da1f2" />
+                    <circle cx="400" cy="100" r="4" fill="#1da1f2" />
+                    <!-- Right Line -->
+                    <line x1="490" y1="250" x2="580" y2="250" stroke="#1da1f2" stroke-width="2" />
+                    <circle cx="490" cy="250" r="3" fill="#1da1f2" />
+                    <circle cx="580" cy="250" r="4" fill="#1da1f2" />
+                    <!-- Bottom Line -->
+                    <line x1="400" y1="290" x2="400" y2="400" stroke="#1da1f2" stroke-width="2" />
+                    <circle cx="400" cy="290" r="3" fill="#1da1f2" />
+                    <circle cx="400" cy="400" r="4" fill="#1da1f2" />
+                    <!-- Left Line -->
+                    <line x1="310" y1="250" x2="220" y2="250" stroke="#1da1f2" stroke-width="2" />
+                    <circle cx="310" cy="250" r="3" fill="#1da1f2" />
+                    <circle cx="220" cy="250" r="4" fill="#1da1f2" />
+                </svg>
+                <div class="center-hex hexagon">
+                    <div class="hexagon-shape"></div>
+                    <div class="hexagon-content">
+                        <div class="hexagon-label">N-Expert.ai<br>MAS Model</div>
+                    </div>
+                </div>
+
+                <div class="surrounding-hex hexagon">
+                    <div class="hexagon-shape"></div>
+                    <div class="hexagon-content">
+                        <div class="hexagon-icon"><i class="fas fa-building"></i></div>
+                        <div class="hexagon-label">PROFESSIONAL SERVICES</div>
+                    </div>
+                </div>
+                <div class="surrounding-hex hexagon hex-gold">
+                    <div class="hexagon-shape"></div>
+                    <div class="hexagon-content">
+                        <div class="hexagon-icon"><i class="fas fa-hard-hat"></i></div>
+                        <div class="hexagon-label">CONSTRUCTION COMPANIES</div>
+                    </div>
+                </div>
+                <div class="surrounding-hex hexagon hex-purple">
+                    <div class="hexagon-shape"></div>
+                    <div class="hexagon-content">
+                        <div class="hexagon-icon"><i class="fas fa-balance-scale"></i></div>
+                        <div class="hexagon-label">LEGAL & COMPLIANCE</div>
+                    </div>
+                </div>
+                <div class="surrounding-hex hexagon hex-gold">
+                    <div class="hexagon-shape"></div>
+                    <div class="hexagon-content">
+                        <div class="hexagon-icon"><i class="fas fa-house"></i></div>
+                        <div class="hexagon-label">REAL ESTATE / INSURANCE</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="impact-features reveal">
+                <div class="impact-item">
+                    <h4>Measurable Impact</h4>
+                    <p>We apply AI where it creates measurable impact across your organization.</p>
+                </div>
+                <div class="impact-item">
+                    <h4>Seamless Integration</h4>
+                    <p>AI systems that integrate seamlessly into your daily workflows.</p>
+                </div>
+                <div class="impact-item">
+                    <h4>Real Solutions</h4>
+                    <p>Solving real problems, improving efficiency, and delivering measurable results.</p>
+                </div>
+            </div>
+
+            <div class="cta-buttons reveal">
+                <button class="btn-outline">Explore Industry Solutions</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Are -->
+    <section class="section who-we-are" id="about">
+        <div class="container">
+            <div class="who-header reveal">
+                <h2 class="section-title">Who We Are & What We Do</h2>
+                <p class="section-subtitle">Driven by Purpose. Backed by Expertise.</p>
+            </div>
+
+            <div class="team-photo reveal">
+                <img src="_contenido/imagenes-generadas/SEC-8-Who-We-Are.webp"
+                    alt="N-Expert.ai team" loading="lazy">
+            </div>
+
+            <div class="reveal" style="text-align: center; margin: 2rem auto 3rem; max-width: 900px;">
+                <p class="section-subtitle">Our mission goes beyond technology. We help organizations adapt AI
+                    responsibly, strategically, and effectively—guided by real-world experience and deep domain
+                    knowledge.</p>
+            </div>
+
+            <div class="mission-cards reveal">
+                <div class="mission-card">
+                    <i class="fas fa-rocket"></i>
+                    <h4>Our Mission</h4>
+                    <p>Make agentic AI accessible to small and midsize businesses, helping them work smarter, grow
+                        faster, and increase profitability.</p>
+                </div>
+                <div class="mission-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h4>Our Vision</h4>
+                    <p>Become the most trusted partner in making agentic AI practical and impactful for SMBs in the U.S.
+                        and Latin America.</p>
+                </div>
+                <div class="mission-card">
+                    <i class="fas fa-brain"></i>
+                    <h4>Our Capabilities</h4>
+                    <p>Design and integrate multi-agent AI systems that automate workflows, enhance engagement, and
+                        support smarter business decisions.</p>
+                </div>
+            </div>
+
+            <div class="cta-buttons reveal" style="margin-top: 5rem;">
+                <button class="btn-primary">Meet the Team</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Impact -->
+    <section class="section community" id="community">
+        <div class="container">
+            <div class="community-header reveal" style="text-align: center;">
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; margin-bottom: 0;">Our
+                    Community Impact</h2>
+                <div
+                    style="width: 700px; max-width: 90%; height: 3px; background: var(--accent-cyan); margin: 1.5rem auto;">
+                </div>
+                <p style="color: var(--text-secondary); font-size: 1.15rem;">Empowering Our Community Through Free AI
+                    Support</p>
+            </div>
+
+            <div class="community-collage-new reveal">
+                <!-- SVG lines connecting to center -->
+                <svg class="collage-connectors" viewBox="0 0 1000 600" fill="none">
+                    <!-- Lines from center to the frames matching reference mapping -->
+                    <path d="M500,300 L450,200 L300,200" stroke="rgba(29, 161, 242, 0.4)" stroke-width="2" />
+                    <path d="M500,300 L550,200 L700,200" stroke="rgba(29, 161, 242, 0.4)" stroke-width="2" />
+                    <path d="M500,300 L500,100" stroke="rgba(29, 161, 242, 0.4)" stroke-width="2" />
+                    <path d="M500,300 L400,450 L300,450" stroke="rgba(29, 161, 242, 0.4)" stroke-width="2" />
+                    <path d="M500,300 L600,450 L700,450" stroke="rgba(29, 161, 242, 0.4)" stroke-width="2" />
+                </svg>
+
+                <div class="collage-grid-custom">
+                    <!-- Top Center: Immigration -->
+                    <div class="collage-item box-1">
+                        <img src="_contenido/imagenes-generadas/INMIGRATION.webp" alt="Immigration Support"
+                            loading="lazy">
+                        <div class="collage-overlay">
+                            <div class="collage-label">IMMIGRATION</div>
+                        </div>
+                    </div>
+
+                    <!-- Middle Left: Legal Assistant -->
+                    <div class="collage-item box-2">
+                        <img src="_contenido/imagenes-generadas/LEGAL ASISTANT.webp" alt="Legal Assistant"
+                            loading="lazy">
+                        <div class="collage-overlay">
+                            <div class="collage-label">LEGAL ASSISTANT</div>
+                        </div>
+                    </div>
+
+                    <!-- Center Logo Box -->
+                    <div class="collage-center-box">
+                        <span style="color:var(--accent-cyan);font-weight:700;">consultas</span><span
+                            style="color:var(--text-primary);font-weight:700;">now</span><span
+                            style="color:var(--accent-cyan);">!</span><span style="color:#ffffff;">org</span>
+                    </div>
+
+                    <!-- Middle Right: Housing -->
+                    <div class="collage-item box-3">
+                        <img src="_contenido/imagenes-generadas/HOUSING.webp" alt="Housing Support" loading="lazy">
+                        <div class="collage-overlay">
+                            <div class="collage-label">HOUSING</div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Left: Employment -->
+                    <div class="collage-item box-4">
+                        <img src="_contenido/imagenes-generadas/EMPLOYMENT.webp" alt="Employment Support"
+                            loading="lazy">
+                        <div class="collage-overlay">
+                            <div class="collage-label">EMPLOYMENT</div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Right: Health -->
+                    <div class="collage-item box-5">
+                        <img src="_contenido/imagenes-generadas/HEALTH.webp" alt="Health Support" loading="lazy">
+                        <div class="collage-overlay">
+                            <div class="collage-label">HEALTH</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="community-content reveal">
+                <div class="community-column">
+                    <h3>Community Impact<br>is Part of Our DNA</h3>
+                    <p>ConsultasNow™ is a free, Spanish-first AI platform designed to help the Hispanic community
+                        navigate everyday questions across immigration, housing, employment, and legal topics — clearly,
+                        responsibly, and accessibly.</p>
+                    <div style="text-align: center; margin-top: 2.5rem;">
+                        <button class="btn-primary" style="padding: 0.8rem 2.5rem; border-radius: 8px;">Visit
+                            ConsultasNow</button>
+                    </div>
+                </div>
+                <div class="community-column">
+                    <h3>Trusted AI Guidance<br>for Everyday Life</h3>
+                    <p>Five domain-focused AI assistants, each trained to address common questions and next steps:</p>
+                    <ul class="assistant-list">
+                        <li>Immigration Assistant</li>
+                        <li>Housing Assistant</li>
+                        <li>Health Assistant</li>
+                        <li>Employment Assistant</li>
+                        <li>Legal Assistant</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    N-Expert<span style="color: var(--accent-cyan);">.ai</span>
+                </div>
+                <p class="tagline">Where Human Expertise Meets AI Precision</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>LEGAL</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Disclaimer</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Data Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>RESOURCES</h4>
+                <ul>
+                    <li><a href="#">AI Glossary</a></li>
+                    <li><a href="#"
+                            title="This section is currently being finalized and will be available shortly as part of Phase 2 of our website launch. Thank you for your continued support.">FAQs</a>
+                        <span class="badge-pending">Pending!</span>
+                    </li>
+                    <li><a href="#">Quick Videos</a></li>
+                    <li><a href="#"
+                            title="This section is currently being finalized and will be available shortly as part of Phase 2 of our website launch. Thank you for your continued support.">Blog
+                            Posts</a>
+                        <span class="badge-pending">Pending!</span>
+                    </li>
+                    <li><a href="#">Community Impact / ConsultasNow</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>CONNECT</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Request a Demo</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Partner Program</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 N-Expert.ai · All rights reserved · McLean, VA · Serving DC, MD, VA — and beyond · A Trusted
+                AI Platform · Powered by Local Digital Works</p>
+        </div>
+    </footer>
+
+    <!-- External shared + home JS -->
+    <script src="js/shared.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,542 @@
+/* ========================================
+   N-Expert.ai About Us Page Styles
+   ======================================== */
+
+/* ========================================
+   Mission Section
+   ======================================== */
+
+.about-mission {
+    padding: 5rem 0;
+}
+
+.about-mission .mission-intro {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+}
+
+.about-mission .mission-intro p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.mission-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.mission-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-cyan-light));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.mission-card:hover::before {
+    transform: scaleX(1);
+}
+
+.mission-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(29, 161, 242, 0.15);
+    border-color: var(--border-hover);
+}
+
+.mission-card i {
+    font-size: 2.5rem;
+    color: var(--accent-cyan);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.mission-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    font-family: var(--font-heading);
+}
+
+.mission-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* ========================================
+   Leadership Section
+   ======================================== */
+
+.leadership-section {
+    padding: 6rem 0;
+}
+
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-top: 3rem;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.leader-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.leader-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(29, 161, 242, 0.15);
+    border-color: var(--border-hover);
+}
+
+.leader-photo {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+}
+
+.leader-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.leader-card:hover .leader-photo img {
+    transform: scale(1.05);
+}
+
+.leader-photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(17, 29, 43, 1) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.leader-info {
+    padding: 1.5rem 2rem 2rem;
+    position: relative;
+    margin-top: -2rem;
+    z-index: 1;
+}
+
+.leader-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+.leader-info h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    line-height: 1.2;
+}
+
+.leader-role {
+    font-size: 0.95rem;
+    color: var(--accent-cyan);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.leader-bio {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.leader-social {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.leader-social a {
+    width: 40px;
+    height: 40px;
+    background: rgba(29, 161, 242, 0.1);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-cyan);
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.leader-social a:hover {
+    background: var(--accent-cyan);
+    color: white;
+    border-color: var(--accent-cyan);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(29, 161, 242, 0.3);
+}
+
+/* ========================================
+   Community Impact Section
+   ======================================== */
+
+.about-community {
+    padding: 6rem 0;
+}
+
+.community-collage-new {
+    position: relative;
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 2rem 0;
+}
+
+.collage-connectors {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.collage-grid-custom {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    z-index: 1;
+}
+
+.collage-item {
+    position: absolute;
+    width: 260px;
+    height: 180px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid rgba(29, 161, 242, 0.4);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    background: #060B14;
+}
+
+.collage-item:hover {
+    transform: scale(1.05);
+    border-color: rgba(29, 161, 242, 1);
+    box-shadow: 0 10px 30px rgba(29, 161, 242, 0.3), inset 0 0 15px rgba(29, 161, 242, 0.2);
+    z-index: 10;
+}
+
+/* Positioning based on a classic 5-point layout around center */
+.collage-item.box-1 {
+    /* Top Center - Immigration */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.collage-item.box-1:hover {
+    transform: translateX(-50%) scale(1.05);
+}
+
+.collage-item.box-2 {
+    /* Middle Left - Legal */
+    top: 50%;
+    left: 4%;
+    transform: translateY(-50%);
+}
+
+.collage-item.box-2:hover {
+    transform: translateY(-50%) scale(1.05);
+}
+
+.collage-item.box-3 {
+    /* Middle Right - Housing */
+    top: 50%;
+    right: 4%;
+    transform: translateY(-50%);
+}
+
+.collage-item.box-3:hover {
+    transform: translateY(-50%) scale(1.05);
+}
+
+.collage-item.box-4 {
+    /* Bottom Left - Employment */
+    bottom: 0;
+    left: 17%;
+}
+
+.collage-item.box-4:hover {
+    transform: scale(1.05);
+}
+
+.collage-item.box-5 {
+    /* Bottom Right - Health */
+    bottom: 0;
+    right: 17%;
+}
+
+.collage-item.box-5:hover {
+    transform: scale(1.05);
+}
+
+.collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    filter: brightness(0.85);
+    /* Slightly darken unused */
+}
+
+.collage-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+.collage-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: linear-gradient(180deg, transparent 0%, rgba(6, 11, 20, 0.95) 80%);
+    color: white;
+    text-align: left;
+}
+
+.collage-label {
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.collage-center-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    z-index: 5;
+    letter-spacing: -0.02em;
+    background: rgba(6, 11, 20, 0.85);
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    border: 1px solid rgba(29, 161, 242, 0.5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(29, 161, 242, 0.1);
+    backdrop-filter: blur(8px);
+    display: inline-flex;
+    align-items: center;
+}
+
+.community-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.community-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.community-column p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.assistant-list {
+    list-style: none;
+    padding: 0;
+}
+
+.assistant-list li {
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.assistant-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+/* ========================================
+   CTA Banner Section
+   ======================================== */
+
+.about-cta {
+    position: relative;
+    padding: 6rem 0;
+    background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=60');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.about-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(11, 18, 32, 0.92), rgba(11, 18, 32, 0.88));
+    z-index: 0;
+}
+
+.about-cta .container {
+    position: relative;
+    z-index: 1;
+}
+
+.about-cta h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-weight: 800;
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+    .mission-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .leadership-grid {
+        grid-template-columns: 1fr;
+        max-width: 550px;
+    }
+
+
+    .community-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Mobile (768px and below) */
+@media (max-width: 768px) {
+    .about-mission {
+        padding: 3rem 0;
+    }
+
+    .mission-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .mission-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .leadership-section {
+        padding: 4rem 0;
+    }
+
+    .leader-photo {
+        height: 260px;
+    }
+
+    .leader-info {
+        padding: 1.25rem 1.5rem 1.5rem;
+    }
+
+    .about-community {
+        padding: 4rem 0;
+    }
+
+
+    .about-cta {
+        padding: 4rem 0;
+        background-attachment: scroll;
+    }
+
+    .about-cta h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+    .mission-card i {
+        font-size: 2rem;
+    }
+
+    .mission-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .leader-photo {
+        height: 220px;
+    }
+
+    .leader-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .leader-bio {
+        font-size: 0.9rem;
+    }
+
+
+    .community-column h3 {
+        font-size: 1.3rem;
+    }
+}
