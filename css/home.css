@@ -3201,32 +3201,23 @@
         font-size: 0.8rem;
     }
 
-    /* DIAG-04 (MAS model): scale(0.7) at 480px, increased from 0.65 for better readability
-       Visual height = 380px * 0.7 = 266px, dead space = 380px - 266px = 114px
-       With center center origin, dead space splits: 57px top + 57px bottom
-       So margin-top: -57px, margin-bottom: -57px. rotate(0deg) resets any tilt. */
+    /* DIAG-04 (MAS model): use desktop size, scale to fit mobile */
     .mas-model-diagram {
-        height: 380px;
-        max-width: 360px;
-        transform: scale(0.7) rotate(0deg) !important;
-        transform-origin: center center !important;
-        margin-top: -57px !important;
-        margin-bottom: -57px !important;
-        padding-top: 1.5rem;
+        width: 800px !important;
+        max-width: none !important;
+        height: 500px !important;
+        position: relative;
+        left: 50% !important;
+        margin-left: -400px !important;
+        transform: scale(0.45) !important;
+        transform-origin: top center !important;
+        margin-top: 0 !important;
+        margin-bottom: -275px !important;
+        padding-top: 0;
     }
 
     .ai-business {
         overflow: hidden !important;
-    }
-
-    .center-hex {
-        width: 130px;
-        height: 150px;
-    }
-
-    .surrounding-hex {
-        width: 100px;
-        height: 115px;
     }
 
     .surrounding-hex:nth-child(2) {
