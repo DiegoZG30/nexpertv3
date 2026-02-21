@@ -3363,13 +3363,13 @@
 
     /* --- MOBILE DIAGRAMS: contain all large diagrams in viewport --- */
     .mas-nexus-diagram {
-        width: 100% !important;
-        left: 0 !important;
-        margin-left: 0 !important;
-        transform: scale(0.35) !important;
+        width: 900px !important;
+        left: 50% !important;
+        margin-left: -450px !important;
+        transform: scale(0.38) !important;
         transform-origin: top center !important;
         height: 800px !important;
-        margin-bottom: -500px !important;
+        margin-bottom: -480px !important;
         margin-top: 0 !important;
     }
 
