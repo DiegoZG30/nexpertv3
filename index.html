@@ -37,6 +37,18 @@
 </head>
 
 <body>
+    <!-- Animated Space Background Layout -->
+    <div class="space-background-container">
+        <div class="nebula nebula-1"></div>
+        <div class="nebula nebula-2"></div>
+        <div class="stars-animated"></div>
+        <div class="space-object planet obj1"></div>
+        <div class="space-object ring obj2"></div>
+        <div class="space-object planet obj3"></div>
+        <div class="space-object ring obj4"></div>
+        <div class="space-object ring obj5"></div>
+    </div>
+
     <!-- Scroll Progress Bar -->
     <div id="scroll-progress"></div>
 
@@ -98,7 +110,7 @@
                     <div class="hero-label" style="margin-bottom: 0.5rem; letter-spacing: 1px;">AI-POWERED
                         BUSINESS TRANSFORMATION</div>
                     <h1 class=""
-                        style="font-size: clamp(3.2rem, 6vw, 4.8rem); line-height: 1.1; margin-bottom: 0; font-weight: 800;">
+                        style="font-size: clamp(3.2rem, 5vw, 4.2rem); line-height: 1.15; margin-bottom: 0; font-weight: 800; letter-spacing: -1px;">
                         Transforming<br>Your Business<br>with Multi-Agent<br>Systems
                     </h1>
                 </div>
@@ -160,20 +172,18 @@
     </section>
 
     <!-- AI Solutions Intro -->
-    <section class="section ai-intro" id="solutions">
-        <div class="container">
-            <div class="ai-intro-hero reveal">
-                <img src="images/section-3-ai-solutions-designed-to-work-like-a-team.webp"
-                    alt="Business team with AI technology" loading="lazy">
-                <div class="ai-intro-overlay">
-                    <div class="section-label">FOR BUSINESSES READY TO MODERNIZE</div>
-                    <h2 class="section-title">AI Solutions Designed to Work<br>Like a Team — Not Just a Tool</h2>
-                    <div class="intro-text">
-                        <p>Most AI tools work in isolation. We build coordinated AI systems where specialized agents
-                            collaborate across tasks, departments, and workflows. The result is automation that feels
-                            intentional, scalable, and aligned with real business operations — not disconnected
-                            features.</p>
-                    </div>
+    <section class="section ai-intro" id="solutions" style="padding: 0; max-width: 100%; overflow: hidden;">
+        <div class="ai-intro-hero reveal">
+            <img src="images/section-3-ai-solutions-designed-to-work-like-a-team.webp"
+                alt="Business team with AI technology" loading="lazy">
+            <div class="ai-intro-overlay">
+                <div class="section-label">FOR BUSINESSES READY TO MODERNIZE</div>
+                <h2 class="section-title">AI Solutions Designed to Work<br>Like a Team — Not Just a Tool</h2>
+                <div class="intro-text">
+                    <p>Most AI tools work in isolation. We build coordinated AI systems where specialized agents
+                        collaborate across tasks, departments, and workflows. The result is automation that feels
+                        intentional, scalable, and aligned with real business operations — not disconnected
+                        features.</p>
                 </div>
             </div>
         </div>
@@ -298,17 +308,19 @@
 
             <div class="two-column-content reveal">
                 <div class="column">
-                    <h3>Transform Your Business with Generative & Agentic AI Agents</h3>
+                    <h3>Transform Your Business with<br>Generative & Agentic AI Agents</h3>
                     <ul>
                         <li>AI agents that work like digital employees. Answering customers, qualifying leads, and
                             automating workflows 24/7, so your business runs smarter in days, not months.</li>
-                        <li>Automate sales follow-ups and bookings.</li>
+                        <li>Automate sales follow-ups & bookings</li>
                     </ul>
                 </div>
                 <div class="column">
-                    <p>Powered by N-Expert.ai's production-ready architecture and expanded through ConsultasNow™ — free
-                        AI assistants supporting the Hispanic community with immigration, housing, health, employment,
-                        and legal guidance.</p>
+                    <ul>
+                        <li>Powered by N-Expert.ai's production-ready architecture and expanded through ConsultasNow™ —
+                            free AI assistants supporting the Hispanic community with immigration, housing, health,
+                            employment, and legal guidance.</li>
+                    </ul>
                     <button class="btn-primary" style="margin-top: 1.5rem;">Meet Your AI Agent</button>
                 </div>
             </div>
@@ -602,8 +614,8 @@
                     asset, not a risky experiment.</p>
             </div>
 
-            <div class="reveal" style="text-align: center; margin: 4rem 0 2rem;">
-                <h3 style="font-size: 2rem; margin-bottom: 2rem;">Our Commitment</h3>
+            <div class="reveal" style="text-align: center; margin: 2rem 0 1rem;">
+                <h3 style="font-size: 2rem; margin-bottom: 1rem;">Our Commitment</h3>
             </div>
 
             <div class="commitment-cards reveal">
@@ -627,7 +639,7 @@
                 </div>
             </div>
 
-            <div class="cta-buttons reveal">
+            <div class="cta-buttons reveal" style="margin-top: 1rem;">
                 <button class="btn-primary" style="padding: 0.8rem 2.5rem; border-radius: 8px;">Learn more</button>
             </div>
         </div>
@@ -730,39 +742,43 @@
             </div>
 
             <div class="team-photo reveal">
-                <img src="_contenido/imagenes-generadas/SEC-8-Who-We-Are.webp"
-                    alt="N-Expert.ai team" loading="lazy">
+                <img src="_contenido/imagenes-generadas/SEC-8-Who-We-Are.webp" alt="N-Expert.ai team" loading="lazy">
             </div>
 
-            <div class="reveal" style="text-align: center; margin: 2rem auto 3rem; max-width: 900px;">
+            <div class="reveal" style="text-align: center; margin: 1rem auto 1.5rem; max-width: 900px;">
                 <p class="section-subtitle">Our mission goes beyond technology. We help organizations adapt AI
                     responsibly, strategically, and effectively—guided by real-world experience and deep domain
                     knowledge.</p>
             </div>
+        </div>
 
-            <div class="mission-cards reveal">
-                <div class="mission-card">
-                    <i class="fas fa-rocket"></i>
-                    <h4>Our Mission</h4>
-                    <p>Make agentic AI accessible to small and midsize businesses, helping them work smarter, grow
-                        faster, and increase profitability.</p>
+        <div class="mission-section-wrapper">
+            <div class="container">
+                <div class="mission-cards reveal">
+                    <div class="mission-card">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Our Mission</h4>
+                        <p>Make agentic AI accessible to small and midsize businesses, helping them work smarter, grow
+                            faster, and increase profitability.</p>
+                    </div>
+                    <div class="mission-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h4>Our Vision</h4>
+                        <p>Become the most trusted partner in making agentic AI practical and impactful for SMBs in the
+                            U.S.
+                            and Latin America.</p>
+                    </div>
+                    <div class="mission-card">
+                        <i class="fas fa-brain"></i>
+                        <h4>Our Capabilities</h4>
+                        <p>Design and integrate multi-agent AI systems that automate workflows, enhance engagement, and
+                            support smarter business decisions.</p>
+                    </div>
                 </div>
-                <div class="mission-card">
-                    <i class="fas fa-bullseye"></i>
-                    <h4>Our Vision</h4>
-                    <p>Become the most trusted partner in making agentic AI practical and impactful for SMBs in the U.S.
-                        and Latin America.</p>
-                </div>
-                <div class="mission-card">
-                    <i class="fas fa-brain"></i>
-                    <h4>Our Capabilities</h4>
-                    <p>Design and integrate multi-agent AI systems that automate workflows, enhance engagement, and
-                        support smarter business decisions.</p>
-                </div>
-            </div>
 
-            <div class="cta-buttons reveal" style="margin-top: 5rem;">
-                <button class="btn-primary">Meet the Team</button>
+                <div class="cta-buttons reveal" style="margin-top: 2rem; padding-bottom: 3rem;">
+                    <button class="btn-primary">Meet the Team</button>
+                </div>
             </div>
         </div>
     </section>
