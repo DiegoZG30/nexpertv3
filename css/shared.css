@@ -16,8 +16,9 @@
     --accent-cyan-dark: #0E7AC2;
     --accent-red: #E63946;
     --text-primary: #F0F4F8;
-    --text-secondary: #94A3B8;
-    --text-dim: #64748B;
+    --text-secondary: #CBD5E1;
+    /* Increased brightness for better contrast */
+    --text-dim: #94A3B8;
     --border: rgba(29, 161, 242, 0.12);
     --border-hover: rgba(29, 161, 242, 0.3);
     --glass-bg: rgba(11, 18, 32, 0.85);
@@ -29,14 +30,296 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
     font-family: var(--font-body);
-    background-color: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    background-color: var(--bg-darker);
+}
+
+/* --- Animated Space Background Container --- */
+.space-background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -10;
+    pointer-events: none;
+    background-color: #070e17;
+    /* Base dark color from user */
+    overflow: hidden;
+}
+
+/* --- Stars (Background Layer) --- */
+.space-background-container .stars-animated {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(1px 1px at 15% 15%, #ffffff 100%, transparent),
+        radial-gradient(1.5px 1.5px at 45% 45%, #ffffff 80%, transparent),
+        radial-gradient(1px 1px at 75% 85%, #88b7d5 100%, transparent),
+        radial-gradient(1px 1px at 55% 15%, #ffffff 100%, transparent),
+        radial-gradient(1.5px 1.5px at 90% 60%, #88b7d5 80%, transparent);
+    background-size: 300px 300px;
+    animation: twinkle 3s ease-in-out infinite alternate;
+    z-index: 1;
+}
+
+/* --- Nebulas (Blurred background lights) --- */
+.space-background-container .nebula {
+    position: absolute;
+    border-radius: 50%;
+    background: #091729;
+    /* Darkened */
+    filter: blur(120px);
+    /* Increased blur for smoother spread */
+    opacity: 0.3;
+    /* Halved opacity so it doesn't look like a solid smudge */
+    z-index: 2;
+    pointer-events: none;
+}
+
+.space-background-container .nebula-1 {
+    width: 50vw;
+    height: 50vh;
+    top: 10%;
+    left: 20%;
+    animation: drift 20s infinite ease-in-out;
+}
+
+.space-background-container .nebula-2 {
+    width: 40vw;
+    height: 60vh;
+    bottom: -10%;
+    right: 10%;
+    background: #0a2038;
+    animation: drift 25s infinite ease-in-out reverse;
+}
+
+/* Optimize space background for mobile: kill extreme blurs that cause scrolling stutter */
+@media (max-width: 768px) {
+    .space-background-container .nebula {
+        filter: blur(40px);
+        opacity: 0.15;
+        animation: none;
+    }
+
+    .space-background-container .stars-animated {
+        animation: none;
+    }
+
+    .space-background-container .space-object {
+        animation: none;
+    }
+
+    .floating-star {
+        animation-duration: 10s !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .space-background-container .nebula {
+        display: none;
+    }
+
+    .space-background-container .stars-animated {
+        opacity: 0.5;
+    }
+
+    .floating-star {
+        animation: none !important;
+        opacity: 0.4 !important;
+    }
+}
+
+/* --- Floating Objects (Planets and Rings) --- */
+.space-background-container .space-object {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* --- Floating Star Particles --- */
+.floating-star {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    animation: starFloat 8s ease-in-out infinite;
+}
+
+.floating-star.star-blue {
+    background: #88ccff;
+    box-shadow: 0 0 4px rgba(136, 204, 255, 0.6);
+}
+
+@keyframes starFloat {
+    0% {
+        opacity: 0;
+        transform: translateY(0) translateX(0) scale(1);
+    }
+
+    20% {
+        opacity: 0.9;
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translateY(-40px) translateX(20px) scale(1.3);
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-80px) translateX(-10px) scale(0.8);
+    }
+}
+
+/* Estilo para los Planetas sólidos */
+.space-background-container .planet {
+    background: radial-gradient(circle at 30% 30%, #1c456b, #0c1f35);
+    box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.4), 0 0 20px rgba(29, 161, 242, 0.15);
+}
+
+/* Estilo para los Anillos huecos */
+.space-background-container .ring {
+    border: 6px solid #143754;
+    box-sizing: border-box;
+    background: transparent;
+    box-shadow: 0 0 15px rgba(29, 161, 242, 0.1);
+}
+
+/* Posicionamiento y tamaños específicos */
+.space-background-container .obj1 {
+    width: 140px;
+    height: 140px;
+    top: 25%;
+    left: -2%;
+    animation: floatVertical 8s ease-in-out infinite;
+}
+
+.space-background-container .obj2 {
+    width: 60px;
+    height: 60px;
+    bottom: 20%;
+    left: 8%;
+    animation: floatHorizontal 12s ease-in-out infinite;
+    border-width: 8px;
+}
+
+.space-background-container .obj3 {
+    width: 130px;
+    height: 130px;
+    bottom: -5%;
+    right: 8%;
+    animation: floatVertical 10s ease-in-out infinite reverse;
+    opacity: 0.9;
+}
+
+.space-background-container .obj4 {
+    width: 50px;
+    height: 50px;
+    top: 15%;
+    right: 8%;
+    animation: floatHorizontal 14s ease-in-out infinite;
+    border-width: 6px;
+}
+
+.space-background-container .obj5 {
+    width: 80px;
+    height: 80px;
+    top: 10%;
+    right: 28%;
+    animation: floatVertical 16s ease-in-out infinite;
+    border: 4px solid rgba(20, 55, 84, 0.4);
+}
+
+/* --- Animaciones (Keyframes) --- */
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.65;
+    }
+}
+
+@keyframes drift {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -30px) scale(1.05);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.95);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes floatVertical {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.6;
+        box-shadow: 0 0 15px rgba(29, 161, 242, 0.1);
+    }
+
+    50% {
+        transform: scale(1.08) rotate(5deg);
+        opacity: 1;
+        box-shadow: 0 0 30px rgba(29, 161, 242, 0.25);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.6;
+        box-shadow: 0 0 15px rgba(29, 161, 242, 0.1);
+    }
+}
+
+@keyframes floatHorizontal {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.5;
+        box-shadow: 0 0 10px rgba(29, 161, 242, 0.1);
+    }
+
+    50% {
+        transform: scale(1.12) rotate(-5deg);
+        opacity: 0.9;
+        box-shadow: 0 0 25px rgba(29, 161, 242, 0.3);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.5;
+        box-shadow: 0 0 10px rgba(29, 161, 242, 0.1);
+    }
 }
 
 h1,
@@ -375,18 +658,17 @@ button {
     gap: 1.5rem;
 }
 
-/* ========== SECTION STYLES ========== */
 .section {
-    padding: 6rem 2rem;
+    padding: 4rem 1.5rem;
     position: relative;
 }
 
 .section.dark {
-    background: var(--bg-darker);
+    background: rgba(7, 13, 23, 0.5);
 }
 
 .section.darker {
-    background: linear-gradient(180deg, var(--bg-darker), var(--bg-primary));
+    background: linear-gradient(180deg, rgba(7, 13, 23, 0.6), rgba(11, 18, 32, 0.4));
 }
 
 .container {
@@ -424,6 +706,10 @@ button {
 
 .section-title.active::after {
     width: 60%;
+}
+
+.section-title.no-underline::after {
+    display: none;
 }
 
 .section-subtitle {

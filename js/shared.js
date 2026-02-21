@@ -1,23 +1,31 @@
-// ========== SCROLL PROGRESS BAR ==========
-window.addEventListener('scroll', () => {
-    const scrollProgress = document.getElementById('scroll-progress');
-    if (!scrollProgress) return;
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrolled = (window.pageYOffset / scrollHeight) * 100;
-    scrollProgress.style.width = scrolled + '%';
-});
-
-// ========== NAVBAR GLASSMORPHISM ==========
+// ========== SCROLL HANDLER (throttled via rAF) ==========
+const scrollProgress = document.getElementById('scroll-progress');
 const navbar = document.getElementById('navbar');
-if (navbar) {
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 100) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-}
+let scrollTicking = false;
+
+window.addEventListener('scroll', () => {
+    if (!scrollTicking) {
+        requestAnimationFrame(() => {
+            const scrollY = window.pageYOffset;
+
+            if (scrollProgress) {
+                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                scrollProgress.style.width = (scrollY / scrollHeight) * 100 + '%';
+            }
+
+            if (navbar) {
+                if (scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }
+
+            scrollTicking = false;
+        });
+        scrollTicking = true;
+    }
+}, { passive: true });
 
 // ========== MOBILE MENU ==========
 const mobileToggle = document.getElementById('mobile-toggle');
@@ -94,20 +102,28 @@ function animateCounter(element, target, duration) {
     }, 16);
 }
 
-// ========== CURSOR GLOW EFFECT ==========
-document.addEventListener('mousemove', (e) => {
-    const cards = document.querySelectorAll('.feature-card, .commitment-card, .mission-card, .feature-item, .bot-card, .service-card, .pricing-card, .value-card, .faq-item');
-    cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
-            card.style.setProperty('--mouse-x', x + 'px');
-            card.style.setProperty('--mouse-y', y + 'px');
+// ========== CURSOR GLOW EFFECT (desktop only, throttled) ==========
+if (window.matchMedia('(pointer: fine)').matches) {
+    const glowCards = document.querySelectorAll('.feature-card, .commitment-card, .mission-card, .feature-item, .bot-card, .service-card, .pricing-card, .value-card, .faq-item');
+    let glowTicking = false;
+    document.addEventListener('mousemove', (e) => {
+        if (!glowTicking) {
+            requestAnimationFrame(() => {
+                glowCards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+                        card.style.setProperty('--mouse-x', x + 'px');
+                        card.style.setProperty('--mouse-y', y + 'px');
+                    }
+                });
+                glowTicking = false;
+            });
+            glowTicking = true;
         }
-    });
-});
+    }, { passive: true });
+}
 
 // ========== BUTTON RIPPLE EFFECT ==========
 document.querySelectorAll('button, .btn-primary, .btn-outline, .btn-red').forEach(button => {
