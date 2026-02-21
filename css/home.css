@@ -3444,8 +3444,48 @@
         margin-top: 0 !important;
     }
 
+    /* Community collage: convert to simple grid on mobile */
     .community-collage-new {
+        width: 100% !important;
+        left: auto !important;
+        margin-left: 0 !important;
+        transform: none !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .community-collage-new .collage-connectors {
         display: none !important;
+    }
+
+    .community-collage-new .collage-grid-custom {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+        height: auto !important;
+        position: relative;
+    }
+
+    .community-collage-new .collage-item {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 100% !important;
+        height: 140px !important;
+        transform: none !important;
+        margin: 0 !important;
+    }
+
+    .community-collage-new .collage-center-box {
+        grid-column: 1 / -1;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        text-align: center;
+        padding: 0.8rem;
+        font-size: 1.2rem;
     }
 
     .orbital-diagram {
