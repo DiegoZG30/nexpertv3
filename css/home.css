@@ -3033,93 +3033,22 @@
         overflow: hidden;
     }
 
-    /* DIAG-04 (agent-hex-grid): contain within mobile viewport */
+    /* DIAG-04 (agent-hex-grid): use desktop 700px grid, scale down to fit mobile */
     .agent-hex-container {
         overflow: hidden;
-        padding: 1rem 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        padding: 0;
+        width: 100%;
     }
 
     .agent-hex-grid {
         position: relative !important;
-        left: auto !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        width: 320px !important;
-        height: 320px !important;
-        transform: scale(0.75) !important;
-        transform-origin: center center !important;
-        margin-bottom: -80px !important;
-    }
-
-    .agent-hex {
-        width: 65px;
-        height: 75px;
-    }
-
-    .agent-hex-icon {
-        font-size: 0.85rem;
-        margin-bottom: 0.15rem;
-    }
-
-    .agent-hex-label {
-        font-size: 0.65rem;
-        line-height: 1.2;
-    }
-
-    .center-agent-hex {
-        width: 80px;
-        height: 92px;
-    }
-
-    .center-agent-hex .agent-hex-icon {
-        font-size: 1.3rem;
-    }
-
-    .center-agent-hex .agent-hex-label {
-        font-size: 0.8rem;
-    }
-
-    .agent-hex:nth-child(2) {
-        left: 127px;
-        top: 13px;
-    }
-
-    .agent-hex:nth-child(3) {
-        left: 205px;
-        top: 45px;
-    }
-
-    .agent-hex:nth-child(4) {
-        left: 238px;
-        top: 122px;
-    }
-
-    .agent-hex:nth-child(5) {
-        left: 205px;
-        top: 200px;
-    }
-
-    .agent-hex:nth-child(6) {
-        left: 127px;
-        top: 232px;
-    }
-
-    .agent-hex:nth-child(7) {
-        left: 50px;
-        top: 200px;
-    }
-
-    .agent-hex:nth-child(8) {
-        left: 17px;
-        top: 122px;
-    }
-
-    .agent-hex:nth-child(9) {
-        left: 60px;
-        top: 70px;
+        left: 50% !important;
+        margin-left: -350px !important;
+        width: 700px !important;
+        height: 700px !important;
+        transform: scale(0.5) !important;
+        transform-origin: top center !important;
+        margin-bottom: -350px !important;
     }
 
     .agent-hex-grid::before {
