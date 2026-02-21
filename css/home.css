@@ -3033,20 +3033,25 @@
         overflow: hidden;
     }
 
-    /* DIAG-04 (agent-hex-grid): Already small at 320px but scale(0.9) prevents any edge bleed */
+    /* DIAG-04 (agent-hex-grid): contain within mobile viewport */
     .agent-hex-container {
-        overflow: visible;
-        padding: 2rem 0.5rem;
+        overflow: hidden;
+        padding: 1rem 0;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
     .agent-hex-grid {
-        width: 320px;
-        height: 320px;
-        transform: scale(0.9);
-        transform-origin: center center;
+        position: relative !important;
+        left: auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 320px !important;
+        height: 320px !important;
+        transform: scale(0.75) !important;
+        transform-origin: center center !important;
+        margin-bottom: -80px !important;
     }
 
     .agent-hex {
@@ -3382,10 +3387,125 @@
         height: auto;
         object-fit: cover;
     }
+
+    /* --- MOBILE MISSION CARDS: center text --- */
+    .mission-cards {
+        grid-template-columns: 1fr !important;
+    }
+
+    .mission-card {
+        text-align: center !important;
+    }
+
+    .mission-card i {
+        position: relative !important;
+        top: 0 !important;
+        left: auto !important;
+        margin: 0 auto 1rem !important;
+    }
+
+    .mission-card h4 {
+        padding-top: 0.5rem !important;
+    }
+
+    /* --- MOBILE COMMITMENT CARDS: center text --- */
+    .commitment-cards {
+        align-items: center !important;
+    }
+
+    .commitment-card {
+        text-align: center !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* --- MOBILE IMPACT FEATURES: single column --- */
+    .impact-features {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+    }
+
+    .impact-item,
+    .impact-item h4,
+    .impact-item p {
+        text-align: center !important;
+    }
+
+    /* --- MOBILE DIAGRAMS: contain all large diagrams in viewport --- */
+    .mas-nexus-diagram {
+        width: 100% !important;
+        left: 0 !important;
+        margin-left: 0 !important;
+        transform: scale(0.35) !important;
+        transform-origin: top center !important;
+        height: 800px !important;
+        margin-bottom: -500px !important;
+        margin-top: 0 !important;
+    }
+
+    .community-collage-new {
+        display: none !important;
+    }
+
+    .orbital-diagram {
+        overflow: hidden;
+    }
+
+    .mas-section {
+        overflow: hidden !important;
+    }
+
+    /* --- MOBILE HERO FIX: show title, reduce image --- */
+    .hero-content-wrapper {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .hero-text {
+        text-align: left;
+    }
+
+    .hero-visual {
+        height: 220px;
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    /* --- MOBILE FEATURES BAR: stack cards, show full content --- */
+    .hero-features-bar {
+        flex-direction: column;
+    }
+
+    .feature-bar-item {
+        padding: 1.2rem 1rem;
+    }
+
+    .feature-divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(29, 161, 242, 0.3), transparent);
+    }
+
+    /* --- MOBILE AI SOLUTIONS INTRO: left-align text --- */
+    .ai-intro-overlay {
+        text-align: left;
+        align-items: flex-start;
+        padding: 8rem 1.5rem 2rem;
+    }
+
+    .ai-intro-overlay .section-title {
+        text-align: left;
+        font-size: 1.6rem;
+    }
+
+    .intro-text {
+        text-align: left;
+    }
 }
 
 /* =========================================
-   NEW COMPONENT RESPONSIVE OVERRIDES 
+   NEW COMPONENT RESPONSIVE OVERRIDES
    ========================================= */
 
 @media (max-width: 992px) {
@@ -3702,6 +3822,14 @@
     gap: 2rem !important;
     align-items: flex-start !important;
     margin-top: 1.5rem !important;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5%;
+}
+
+.community-column {
+    max-width: 380px;
 }
 
 .community-content h3 {
