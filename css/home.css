@@ -293,6 +293,8 @@
 
 .feature-content .btn-primary {
     margin-top: auto;
+    padding: 0.56rem 1.75rem;
+    font-size: 0.88rem;
     transition: all 0.3s ease;
 }
 
@@ -321,6 +323,147 @@
     text-align: center;
     position: relative;
     background: var(--bg-primary);
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+
+/* --- Layer 1 (::before): Ambient side glows + drifting star particles --- */
+.ai-intro::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background-image:
+        /* Soft ambient glow — left edge */
+        radial-gradient(ellipse 35% 60% at 5% 50%, rgba(29, 161, 242, 0.07) 0%, transparent 70%),
+        /* Soft ambient glow — right edge */
+        radial-gradient(ellipse 35% 60% at 95% 50%, rgba(84, 197, 216, 0.07) 0%, transparent 70%),
+        /* Gentle top-left accent bloom */
+        radial-gradient(ellipse 25% 35% at 8% 20%, rgba(29, 161, 242, 0.05) 0%, transparent 70%),
+        /* Gentle bottom-right accent bloom */
+        radial-gradient(ellipse 25% 35% at 92% 80%, rgba(84, 197, 216, 0.05) 0%, transparent 70%),
+
+        /* Star particles — left side */
+        radial-gradient(1.5px 1.5px at 3% 8%, rgba(255, 255, 255, 0.8) 0%, transparent 100%),
+        radial-gradient(1px 1px at 7% 18%, rgba(255, 255, 255, 0.5) 0%, transparent 100%),
+        radial-gradient(2px 2px at 2% 32%, rgba(29, 161, 242, 0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 12% 26%, rgba(255, 255, 255, 0.4) 0%, transparent 100%),
+        radial-gradient(1.2px 1.2px at 5% 44%, rgba(84, 197, 216, 0.55) 0%, transparent 100%),
+        radial-gradient(1px 1px at 15% 38%, rgba(255, 255, 255, 0.35) 0%, transparent 100%),
+        radial-gradient(1.8px 1.8px at 1% 56%, rgba(255, 255, 255, 0.7) 0%, transparent 100%),
+        radial-gradient(1px 1px at 9% 62%, rgba(29, 161, 242, 0.45) 0%, transparent 100%),
+        radial-gradient(1.3px 1.3px at 18% 52%, rgba(255, 255, 255, 0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 6% 74%, rgba(84, 197, 216, 0.5) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 14% 70%, rgba(255, 255, 255, 0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 3% 86%, rgba(255, 255, 255, 0.4) 0%, transparent 100%),
+        radial-gradient(1.2px 1.2px at 10% 92%, rgba(29, 161, 242, 0.35) 0%, transparent 100%),
+        radial-gradient(1px 1px at 19% 84%, rgba(255, 255, 255, 0.3) 0%, transparent 100%),
+        radial-gradient(1.6px 1.6px at 8% 15%, rgba(84, 197, 216, 0.45) 0%, transparent 100%),
+        radial-gradient(1px 1px at 16% 58%, rgba(255, 255, 255, 0.25) 0%, transparent 100%),
+
+        /* Star particles — right side */
+        radial-gradient(1.5px 1.5px at 97% 10%, rgba(255, 255, 255, 0.8) 0%, transparent 100%),
+        radial-gradient(1px 1px at 93% 22%, rgba(255, 255, 255, 0.5) 0%, transparent 100%),
+        radial-gradient(2px 2px at 98% 36%, rgba(84, 197, 216, 0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 88% 28%, rgba(255, 255, 255, 0.4) 0%, transparent 100%),
+        radial-gradient(1.2px 1.2px at 95% 48%, rgba(29, 161, 242, 0.55) 0%, transparent 100%),
+        radial-gradient(1px 1px at 85% 40%, rgba(255, 255, 255, 0.35) 0%, transparent 100%),
+        radial-gradient(1.8px 1.8px at 99% 58%, rgba(255, 255, 255, 0.7) 0%, transparent 100%),
+        radial-gradient(1px 1px at 91% 66%, rgba(84, 197, 216, 0.45) 0%, transparent 100%),
+        radial-gradient(1.3px 1.3px at 82% 54%, rgba(255, 255, 255, 0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 94% 78%, rgba(29, 161, 242, 0.5) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 86% 72%, rgba(255, 255, 255, 0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 97% 88%, rgba(255, 255, 255, 0.4) 0%, transparent 100%),
+        radial-gradient(1.2px 1.2px at 90% 94%, rgba(84, 197, 216, 0.35) 0%, transparent 100%),
+        radial-gradient(1px 1px at 81% 86%, rgba(255, 255, 255, 0.3) 0%, transparent 100%),
+        radial-gradient(1.6px 1.6px at 92% 14%, rgba(29, 161, 242, 0.45) 0%, transparent 100%),
+        radial-gradient(1px 1px at 84% 60%, rgba(255, 255, 255, 0.25) 0%, transparent 100%);
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    animation: ai-intro-breathe 8s ease-in-out infinite alternate;
+}
+
+/* --- Layer 2 (::after): Soft geometric halos + floating accent orbs --- */
+.ai-intro::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background-image:
+        /* Ethereal ring halos — left side */
+        radial-gradient(60px at 6% 30%, transparent 55%, rgba(29, 161, 242, 0.08) 58%, transparent 62%),
+        radial-gradient(45px at 14% 65%, transparent 55%, rgba(84, 197, 216, 0.06) 58%, transparent 62%),
+        radial-gradient(35px at 4% 75%, transparent 55%, rgba(29, 161, 242, 0.05) 58%, transparent 62%),
+        radial-gradient(50px at 18% 20%, transparent 55%, rgba(84, 197, 216, 0.04) 58%, transparent 62%),
+        radial-gradient(40px at 10% 48%, transparent 55%, rgba(29, 161, 242, 0.06) 58%, transparent 62%),
+
+        /* Ethereal ring halos — right side */
+        radial-gradient(60px at 94% 35%, transparent 55%, rgba(84, 197, 216, 0.08) 58%, transparent 62%),
+        radial-gradient(45px at 86% 68%, transparent 55%, rgba(29, 161, 242, 0.06) 58%, transparent 62%),
+        radial-gradient(35px at 96% 78%, transparent 55%, rgba(84, 197, 216, 0.05) 58%, transparent 62%),
+        radial-gradient(50px at 82% 22%, transparent 55%, rgba(29, 161, 242, 0.04) 58%, transparent 62%),
+        radial-gradient(40px at 90% 52%, transparent 55%, rgba(84, 197, 216, 0.06) 58%, transparent 62%),
+
+        /* Diffuse accent orbs — left side */
+        radial-gradient(18px at 5% 25%, rgba(29, 161, 242, 0.12) 0%, transparent 100%),
+        radial-gradient(12px at 12% 55%, rgba(84, 197, 216, 0.10) 0%, transparent 100%),
+        radial-gradient(15px at 3% 80%, rgba(29, 161, 242, 0.08) 0%, transparent 100%),
+        radial-gradient(10px at 17% 40%, rgba(84, 197, 216, 0.07) 0%, transparent 100%),
+
+        /* Diffuse accent orbs — right side */
+        radial-gradient(18px at 95% 28%, rgba(84, 197, 216, 0.12) 0%, transparent 100%),
+        radial-gradient(12px at 88% 58%, rgba(29, 161, 242, 0.10) 0%, transparent 100%),
+        radial-gradient(15px at 97% 82%, rgba(84, 197, 216, 0.08) 0%, transparent 100%),
+        radial-gradient(10px at 83% 42%, rgba(29, 161, 242, 0.07) 0%, transparent 100%);
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    animation: ai-intro-drift 12s ease-in-out infinite alternate;
+}
+
+/* --- Keyframes --- */
+
+/* Gentle breathing opacity for the star field layer */
+@keyframes ai-intro-breathe {
+    0% {
+        opacity: 0.55;
+    }
+
+    50% {
+        opacity: 0.85;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Slow vertical drift for geometric halos and orbs */
+@keyframes ai-intro-drift {
+    0% {
+        opacity: 0.5;
+        transform: translateY(6px) scale(1);
+    }
+
+    33% {
+        opacity: 0.75;
+    }
+
+    66% {
+        opacity: 0.9;
+        transform: translateY(-4px) scale(1.015);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1.005);
+    }
 }
 
 .ai-intro .container {
@@ -363,6 +506,8 @@
     justify-content: center;
     align-items: center;
 }
+
+/* Tech dot-grid pattern + scanning glow for the text area */
 
 .ai-intro-overlay .section-label {
     margin-bottom: 0.5rem;
@@ -622,20 +767,21 @@
 }
 
 .agent-hex-container {
-    background: linear-gradient(rgba(6, 11, 20, 0.75), rgba(6, 11, 20, 0.85)), url('../images/generative-agentic-bg.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(rgba(6, 11, 20, 0.75), rgba(6, 11, 20, 0.85)), url('../images/generative-agentic-bg.webp') #060B14;
+    background-size: 100% 100%, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
     border: 2px solid rgba(29, 161, 242, 0.45);
     border-radius: 8px;
     box-shadow: 0 0 30px rgba(29, 161, 242, 0.15), inset 0 0 40px rgba(0, 0, 0, 0.8);
     overflow: hidden;
-    padding: 3rem 1rem;
+    padding: 1.5rem;
     position: relative;
     display: flex;
     justify-content: center;
-    max-width: 1050px;
+    max-width: 750px;
     margin: 0 auto;
+    align-items: center;
 }
 
 .agent-hex-container::before {
@@ -731,7 +877,7 @@
 .agent-hex-icon {
     font-size: 1.8rem;
     color: var(--accent-cyan);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.3rem;
     filter: drop-shadow(0 0 6px rgba(29, 161, 242, 0.4));
 }
 
@@ -811,7 +957,7 @@
 }
 
 .agent-hex:nth-child(4) {
-    left: 447px;
+    left: 448px;
     top: 104px;
     animation: hexBreathe 4s ease-in-out infinite;
     animation-delay: 0.4s;
@@ -825,7 +971,7 @@
 }
 
 .agent-hex:nth-child(6) {
-    left: 447px;
+    left: 448px;
     top: 458px;
     animation: hexBreathe 4s ease-in-out infinite;
     animation-delay: 1.2s;
@@ -839,7 +985,7 @@
 }
 
 .agent-hex:nth-child(8) {
-    left: 93px;
+    left: 92px;
     top: 458px;
     animation: hexBreathe 4s ease-in-out infinite;
     animation-delay: 2.0s;
@@ -853,7 +999,7 @@
 }
 
 .agent-hex:nth-child(10) {
-    left: 93px;
+    left: 92px;
     top: 104px;
     animation: hexBreathe 4s ease-in-out infinite;
     animation-delay: 2.8s;
@@ -976,6 +1122,23 @@
     max-width: 900px;
     height: 800px;
     margin: 4rem auto 2rem;
+    padding: 0;
+    z-index: 1;
+}
+
+.mas-nexus-diagram::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    bottom: -40px;
+    left: -10px;
+    right: -15px;
+    background: rgba(14, 27, 43, 0.4);
+    border: 1px solid rgba(29, 161, 242, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: -1;
+    pointer-events: none;
 }
 
 .nexus-connections {
@@ -989,6 +1152,11 @@
     pointer-events: none;
 }
 
+.nexus-connections g {
+    stroke-width: 1px !important;
+    opacity: 0.5 !important;
+}
+
 .nexus-connections line {
     animation: dashFlow 20s linear infinite;
 }
@@ -998,19 +1166,17 @@
     top: 400px;
     left: 450px;
     transform: translate(-50%, -50%);
-    width: 180px;
-    height: 180px;
-    background: linear-gradient(135deg, var(--accent-cyan), rgba(29, 161, 242, 0.7));
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, #173b5c 0%, #0d1e30 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     z-index: 10;
-    box-shadow: 0 0 40px rgba(29, 161, 242, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.2);
-    border: 6px solid #13243A;
-    /* Dark gap */
-    outline: 4px solid var(--accent-cyan);
+    box-shadow: 0 0 40px rgba(90, 224, 255, 0.4), inset 0 0 20px rgba(90, 224, 255, 0.2);
+    border: 5px solid #2db8d8;
     animation: centerPulse 3s ease-in-out infinite;
 }
 
@@ -1018,11 +1184,11 @@
 
     0%,
     100% {
-        box-shadow: 0 0 40px rgba(29, 161, 242, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 40px rgba(90, 224, 255, 0.4), inset 0 0 20px rgba(90, 224, 255, 0.2);
     }
 
     50% {
-        box-shadow: 0 0 60px rgba(29, 161, 242, 0.8), inset 0 0 20px rgba(255, 255, 255, 0.4);
+        box-shadow: 0 0 60px rgba(90, 224, 255, 0.6), inset 0 0 20px rgba(90, 224, 255, 0.3);
     }
 }
 
@@ -1039,31 +1205,25 @@
 
 .nexus-node {
     position: absolute;
-    width: 130px;
-    height: 130px;
-    background: transparent;
-    border: 4px solid #F0F4F8;
+    width: 120px;
+    height: 120px;
+    background: #0d1e30;
+    border: 4px solid #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    padding: 1rem;
-    box-shadow: 0 0 25px rgba(29, 161, 242, 0.4), inset 0 0 15px rgba(29, 161, 242, 0.15);
+    padding: 0;
+    box-shadow: 0 0 20px rgba(90, 224, 255, 0.3), inset 0 0 15px rgba(90, 224, 255, 0.2);
     transform: translate(-50%, -50%);
     z-index: 5;
-    background: rgba(11, 18, 32, 0.95);
     transition: all 0.3s ease;
 }
 
 .nexus-node::before {
-    content: '';
-    position: absolute;
-    inset: -6px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    pointer-events: none;
+    display: none;
 }
 
 .nexus-node:hover {
@@ -1076,6 +1236,35 @@
     font-size: 2.8rem;
     color: var(--accent-cyan);
     filter: drop-shadow(0 0 8px rgba(29, 161, 242, 0.5));
+}
+
+.nexus-svg-icon {
+    width: 55px;
+    height: 55px;
+    fill: none;
+    stroke: var(--accent-cyan);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nexus-node:hover .nexus-svg-icon {
+    filter: drop-shadow(0 0 5px rgba(90, 224, 255, 0.8));
+    stroke: #ffffff;
+}
+
+.action-agent-text {
+    font-family: var(--font-primary, 'Inter', sans-serif);
+    font-weight: 700;
+    font-size: 14px;
+    fill: #ffffff;
+    text-anchor: middle;
+    letter-spacing: 0.5px;
+    stroke: none;
 }
 
 .nexus-text-node {
@@ -1216,7 +1405,7 @@
     gap: 2rem 5rem;
     max-width: 950px;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
 }
 
 .feature-item {
@@ -1550,7 +1739,7 @@
     /* Solid color to block stars from underneath if any were left */
     border: none;
     border-radius: 12px;
-    padding: 2rem 1rem;
+    padding: 0.5rem 1rem;
     align-items: flex-start;
 }
 
@@ -1813,7 +2002,7 @@
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 1.5rem;
     margin: 2rem 0;
-    text-align: left;
+    text-align: center;
 }
 
 .impact-item h4 {
@@ -1877,9 +2066,9 @@
 
 .team-photo {
     width: 100%;
-    max-width: 750px;
+    max-width: 640px;
     height: auto;
-    margin: 0 auto 2rem;
+    margin: 0 auto 1rem;
     border-radius: 20px;
     overflow: hidden;
     border: 2px solid rgba(29, 161, 242, 0.3);
@@ -1903,33 +2092,42 @@
 }
 
 .mission-section-wrapper {
-    background-color: transparent;
-    padding-top: 3rem;
+    background: rgba(6, 10, 18, 0.92);
+    border: 1px solid rgba(29, 161, 242, 0.25);
+    border-radius: 14px;
+    padding: 0.8rem 1.5rem 0.2rem;
     position: relative;
     z-index: 10;
     margin-top: 2rem;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
 }
 
 .mission-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem 2.5rem;
-    margin-top: 3rem;
-    padding-top: 0;
-    border-top: 1px solid rgba(29, 161, 242, 0.3);
+    display: flex;
+    gap: 0;
+    margin-top: 0;
+    padding: 0;
+    border-top: none;
     position: relative;
     background: transparent;
 }
 
 .mission-card {
+    flex: 1;
     background: transparent;
     border: none;
+    border-right: 1px solid rgba(29, 161, 242, 0.2);
     border-radius: 0;
-    padding: 0;
+    padding: 0.5rem 1.8rem;
     transition: all 0.3s ease;
     position: relative;
     text-align: left;
     box-shadow: none;
+}
+
+.mission-card:last-child {
+    border-right: none;
 }
 
 .mission-card:hover {
@@ -1937,35 +2135,36 @@
 }
 
 .mission-card i {
-    width: 60px;
-    height: 60px;
-    background: #1da1f2;
-    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    background: rgba(10, 18, 30, 0.9);
+    color: #1da1f2;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    position: absolute;
-    top: -30px;
-    left: 0;
-    box-shadow: 0 0 30px rgba(29, 161, 242, 0.8);
-    border: 4px solid #010308;
+    font-size: 1rem;
+    position: static;
+    transform: none;
+    box-shadow: 0 0 15px rgba(29, 161, 242, 0.3);
+    border: 2px solid #1da1f2;
+    margin-bottom: 0.6rem;
 }
 
 .mission-card h4 {
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
     color: #1da1f2;
-    font-weight: 800;
+    font-weight: 700;
     font-style: normal;
-    padding-top: 3.5rem;
+    padding-top: 0;
 }
 
 .mission-card p {
     color: var(--text-secondary);
-    line-height: 1.7;
-    font-size: 0.95rem;
+    line-height: 1.6;
+    font-size: 0.93rem;
+    margin: 0;
 }
 
 /* ========== COMMUNITY IMPACT ========== */
@@ -2448,6 +2647,11 @@
 
     .hero-text {
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
 
     .hero-visual {
@@ -2458,7 +2662,11 @@
     }
 
     .hero h1 {
-        font-size: clamp(1.8rem, 6vw, 2.8rem);
+        font-size: clamp(2.4rem, 8vw, 3.2rem) !important;
+        /* ~25% reduction */
+        line-height: 1.2 !important;
+        margin-bottom: 1rem !important;
+        text-align: center !important;
     }
 
     .hero-subtitle {
@@ -2469,6 +2677,10 @@
 
     .hero-label {
         font-size: 0.75rem;
+        margin-bottom: 0.75rem !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center;
     }
 
     .hero-cta {
@@ -2476,13 +2688,26 @@
     }
 
     /* --- TYPOGRAPHY --- */
+    .section-title {
+        font-size: 1.4rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 0.8rem !important;
+    }
+
+    .section-subtitle,
+    p.section-subtitle {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 1.5rem !important;
+    }
+
     .feature-card h3 {
         font-size: 1.2rem;
     }
 
     .column h3,
     .community-column h3 {
-        font-size: 1.35rem;
+        font-size: 1.25rem !important;
     }
 
     body,
@@ -2490,8 +2715,10 @@
     .column li,
     .intro-text,
     .community-column p,
-    .mission-card p {
-        font-size: 1rem;
+    .mission-card p,
+    .feature-col p {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
     }
 
     /* --- COMMITMENT CARDS --- */
@@ -2510,6 +2737,39 @@
 
     .commitment-card:last-child {
         border-bottom: none;
+    }
+
+    /* --- MISSION CARDS (tablet) --- */
+    .mission-section-wrapper {
+        border-radius: 10px;
+        padding: 2rem 1.5rem;
+    }
+
+    .mission-cards {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .mission-card {
+        border-right: none;
+        border-bottom: 1px solid rgba(29, 161, 242, 0.2);
+        padding: 1.25rem 1rem;
+        text-align: left;
+    }
+
+    .mission-card:last-child {
+        border-bottom: none;
+    }
+
+    .mission-card i {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .mission-card h4 {
+        font-size: 1.15rem;
     }
 
     /* --- HEXAGON DIAGRAMS (Phase 3 — do not touch) --- */
@@ -2566,9 +2826,14 @@
 
     /* DIAG-04 (agent-hex-grid): scale to fit narrower screens maintaining perfect symmetry */
     .agent-hex-container {
-        overflow: hidden;
+        overflow: hidden !important;
         /* strictly contain */
         width: 100%;
+        max-width: 100%;
+        box-sizing: border-box !important;
+        border-radius: 8px !important;
+        padding: 1rem !important;
+        /* Disminuir un poco el espaciado para que no estruje la gráfica */
     }
 
     .agent-hex-grid {
@@ -2577,10 +2842,12 @@
         margin-left: -350px !important;
         /* Half of 700px desktop grid */
         width: 700px !important;
-        transform: scale(0.55);
+        transform: scale(0.48);
+        /* Escala más pequeña para que el gráfico no rompa los bordes en celular */
         transform-origin: top center;
         height: 700px;
-        margin-bottom: -300px !important;
+        margin-bottom: -350px !important;
+        /* Reducir brecha resultante del nuevo scale menor */
         /* compensate for scaling empty space gap */
     }
 
@@ -2603,7 +2870,47 @@
 
     .two-column-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+        text-align: center;
+        align-items: center !important;
+    }
+
+    .two-column-content .column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .two-column-content br {
+        display: none !important;
+        /* Permite un wrap natural en mobile, previene overflow horizontal */
+    }
+
+    .two-column-content h3 {
+        font-size: 1.25rem !important;
+        line-height: 1.35 !important;
+        margin-bottom: 1rem !important;
+        text-align: center !important;
+    }
+
+    .two-column-content p,
+    .two-column-content li {
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
+        word-wrap: break-word;
+        text-align: center !important;
+        /* Obliga a romper palabras si exceden la pantalla */
+    }
+
+    .two-column-content .btn-primary {
+        padding: 0.5rem 1.5rem !important;
+        font-size: 0.85rem !important;
+        width: auto !important;
+        display: inline-block !important;
+        border-radius: 25px !important;
+        margin-top: 0.5rem !important;
     }
 
     /* DIAG-02: Orbital — scale(0.75) at 768px, compensate layout height */
@@ -2804,6 +3111,57 @@
         display: none;
     }
 
+    /* Fix community-collage-new at 768px: convert to grid, reset absolute box positions */
+    .community-collage-new {
+        width: 100% !important;
+        transform: none !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .community-collage-new .collage-connectors {
+        display: none !important;
+    }
+
+    .community-collage-new .collage-grid-custom {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+        height: auto !important;
+        position: relative;
+    }
+
+    .community-collage-new .collage-item,
+    .community-collage-new .collage-item.box-1,
+    .community-collage-new .collage-item.box-2,
+    .community-collage-new .collage-item.box-3,
+    .community-collage-new .collage-item.box-4,
+    .community-collage-new .collage-item.box-5 {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        height: 160px !important;
+        margin: 0 !important;
+    }
+
+    .community-collage-new .collage-item.box-1 {
+        grid-column: 1 / -1;
+    }
+
+    .community-collage-new .collage-center-box {
+        grid-column: 1 / -1;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        text-align: center;
+        padding: 0.8rem;
+        font-size: 1.2rem;
+    }
+
     .community-content {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -2833,8 +3191,10 @@
     }
 
     .hero h1 {
-        font-size: clamp(1.6rem, 7vw, 2.2rem);
+        font-size: clamp(2rem, 9vw, 2.5rem) !important;
+        line-height: 1.2 !important;
         word-break: break-word;
+        text-align: center !important;
     }
 
     .hero-subtitle {
@@ -3051,6 +3411,77 @@
         margin-bottom: -350px !important;
     }
 
+    .hex-connectors {
+        display: block !important;
+    }
+
+    .agent-hex {
+        width: 160px !important;
+        height: 138px !important;
+    }
+
+    .agent-hex-icon {
+        font-size: 1.8rem !important;
+        margin-bottom: 0.4rem !important;
+    }
+
+    .agent-hex-label {
+        font-size: 0.8rem !important;
+    }
+
+    .center-agent-hex {
+        width: 170px !important;
+        height: 170px !important;
+    }
+
+    .center-agent-hex .agent-hex-icon {
+        font-size: 5.5rem !important;
+    }
+
+    .center-agent-hex .agent-hex-label {
+        font-size: 2.5rem !important;
+    }
+
+    .agent-hex:nth-child(3) {
+        left: 270px !important;
+        top: 31px !important;
+    }
+
+    .agent-hex:nth-child(4) {
+        left: 447px !important;
+        top: 104px !important;
+    }
+
+    .agent-hex:nth-child(5) {
+        left: 520px !important;
+        top: 281px !important;
+    }
+
+    .agent-hex:nth-child(6) {
+        left: 447px !important;
+        top: 458px !important;
+    }
+
+    .agent-hex:nth-child(7) {
+        left: 270px !important;
+        top: 531px !important;
+    }
+
+    .agent-hex:nth-child(8) {
+        left: 93px !important;
+        top: 458px !important;
+    }
+
+    .agent-hex:nth-child(9) {
+        left: 20px !important;
+        top: 281px !important;
+    }
+
+    .agent-hex:nth-child(10) {
+        left: 93px !important;
+        top: 104px !important;
+    }
+
     .agent-hex-grid::before {
         width: 200px;
         height: 200px;
@@ -3209,10 +3640,11 @@
         position: relative;
         left: 50% !important;
         margin-left: -400px !important;
-        transform: scale(0.45) !important;
+        transform: scale(0.48) !important;
+        /* Slightly larger */
         transform-origin: top center !important;
         margin-top: 0 !important;
-        margin-bottom: -275px !important;
+        margin-bottom: -250px !important;
         padding-top: 0;
     }
 
@@ -3220,32 +3652,53 @@
         overflow: hidden !important;
     }
 
+    /* Restore desktop hex sizes so text doesn't overflow before scaling */
+    .center-hex {
+        width: 210px !important;
+        height: 182px !important;
+    }
+
+    .surrounding-hex {
+        width: 180px !important;
+        height: 156px !important;
+    }
+
     .surrounding-hex:nth-child(2) {
-        top: 12%;
-        left: 12%;
+        top: 10%;
+        left: 5%;
+        right: auto;
+        bottom: auto;
     }
 
     .surrounding-hex:nth-child(3) {
-        top: 12%;
-        right: 12%;
+        top: 10%;
+        right: 5%;
+        left: auto;
+        bottom: auto;
     }
 
     .surrounding-hex:nth-child(4) {
-        bottom: 12%;
-        left: 12%;
+        bottom: 10%;
+        left: 5%;
+        top: auto;
+        right: auto;
     }
 
     .surrounding-hex:nth-child(5) {
-        bottom: 12%;
-        right: 12%;
+        bottom: 10%;
+        right: 5%;
+        top: auto;
+        left: auto;
     }
 
-    .surrounding-hex .hexagon-icon {
-        font-size: 1.5rem;
+    .surrounding-hex .hexagon-icon i {
+        font-size: 2rem !important;
+        margin-bottom: 0.2rem !important;
     }
 
     .surrounding-hex .hexagon-label {
-        font-size: 0.8rem;
+        font-size: 0.95rem !important;
+        line-height: 1.2 !important;
     }
 
     /* FIX-05: Center value proposition columns (Measurable Impact, Seamless Integration, Real Solutions) */
@@ -3308,24 +3761,31 @@
         object-fit: cover;
     }
 
-    /* --- MOBILE MISSION CARDS: center text --- */
-    .mission-cards {
-        grid-template-columns: 1fr !important;
+    /* --- MOBILE MISSION CARDS --- */
+    .mission-section-wrapper {
+        border-radius: 10px;
+        padding: 1.5rem 1rem;
     }
 
     .mission-card {
-        text-align: center !important;
+        padding: 1rem 0.75rem;
+        text-align: center;
     }
 
     .mission-card i {
-        position: relative !important;
-        top: 0 !important;
-        left: auto !important;
-        margin: 0 auto 1rem !important;
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+        margin: 0 auto 0.6rem;
     }
 
     .mission-card h4 {
-        padding-top: 0.5rem !important;
+        font-size: 1.05rem;
+        padding-top: 0;
+    }
+
+    .mission-card p {
+        font-size: 0.9rem;
     }
 
     /* --- MOBILE COMMITMENT CARDS: center text --- */
@@ -3385,16 +3845,27 @@
         position: relative;
     }
 
-    .community-collage-new .collage-item {
+    /* Reset ALL absolute positioning from box-1 through box-5 */
+    .community-collage-new .collage-item,
+    .community-collage-new .collage-item.box-1,
+    .community-collage-new .collage-item.box-2,
+    .community-collage-new .collage-item.box-3,
+    .community-collage-new .collage-item.box-4,
+    .community-collage-new .collage-item.box-5 {
         position: relative !important;
         top: auto !important;
         left: auto !important;
         right: auto !important;
         bottom: auto !important;
-        width: 100% !important;
-        height: 140px !important;
         transform: none !important;
+        width: 100% !important;
+        height: 160px !important;
         margin: 0 !important;
+    }
+
+    /* Make top item (Immigration) span full width */
+    .community-collage-new .collage-item.box-1 {
+        grid-column: 1 / -1;
     }
 
     .community-collage-new .collage-center-box {
@@ -3438,7 +3909,48 @@
     }
 
     .feature-bar-item {
-        padding: 1.2rem 1rem;
+        padding: 0.8rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.4rem;
+    }
+
+    .feature-icon-svg svg {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    .feature-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .feature-content h3 {
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+
+    .feature-content p {
+        margin-bottom: 0.4rem;
+        font-size: 0.8rem;
+        line-height: 1.3;
+        max-width: 95%;
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    .feature-content .btn-primary {
+        width: auto !important;
+        display: inline-block !important;
+        padding: 0.35rem 0.8rem !important;
+        font-size: 0.75rem !important;
+        min-height: 0 !important;
+        margin-top: 0.1rem !important;
     }
 
     .feature-divider {
@@ -3447,20 +3959,54 @@
         background: linear-gradient(to right, transparent, rgba(29, 161, 242, 0.3), transparent);
     }
 
-    /* --- MOBILE AI SOLUTIONS INTRO: left-align text --- */
+    /* --- MOBILE AI SOLUTIONS INTRO: center text & push down --- */
     .ai-intro-overlay {
-        text-align: left;
-        align-items: flex-start;
-        padding: 8rem 1.5rem 2rem;
+        text-align: center;
+        align-items: center;
+        box-sizing: border-box !important;
+        width: 100% !important;
+        padding: 6rem 1.8rem 1.5rem;
+        /* Aumenta padding arriba para forzar a bajar el texto */
+        justify-content: flex-end !important;
+        gap: 1rem;
+        background: linear-gradient(180deg, transparent 30%, rgba(6, 11, 20, 0.5) 55%, rgba(6, 11, 20, 0.95) 85%, #060b14 100%) !important;
+        /* Oscurecer selectivamente el fondo detrás del texto de abajo */
+    }
+
+    .ai-intro-overlay .section-label {
+        font-size: 0.65rem !important;
+        /* Etiqueta más sutil */
+        margin-bottom: 0.2rem !important;
+        letter-spacing: 1.5px;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
     }
 
     .ai-intro-overlay .section-title {
-        text-align: left;
-        font-size: 1.6rem;
+        text-align: center;
+        font-size: 1.25rem !important;
+        /* Título significativamente más pequeño para caber en menos líneas */
+        line-height: 1.35 !important;
+        /* Más aire entre líneas */
+        letter-spacing: -0.2px !important;
+        margin-bottom: 1.5rem !important;
+        /* Espacio expandido debajo del título */
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+        /* Sombra alta para máximo contraste contra la imagen */
     }
 
     .intro-text {
-        text-align: left;
+        text-align: center;
+    }
+
+    .intro-text p {
+        font-size: 0.8rem !important;
+        /* Párrafo más fino */
+        line-height: 1.55 !important;
+        /* Aire generoso en la lectura */
+        margin-bottom: 0 !important;
+        color: rgba(255, 255, 255, 0.85);
+        /* Rebaja el blanco puro para no saturar */
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
     }
 }
 
@@ -3568,7 +4114,10 @@
 
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+
+    *,
+    *::before,
+    *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
@@ -3577,6 +4126,7 @@
 
 /* Tablet: kill heavy animations */
 @media (max-width: 1024px) {
+
     /* Kill heavy filter animations */
     .agent-hex-container::before {
         animation: none;
@@ -3608,6 +4158,7 @@
 
 /* Mobile: aggressive performance mode */
 @media (max-width: 768px) {
+
     /* Kill ALL hex floating/breathing animations */
     .agent-hex,
     .agent-hex:nth-child(n) {
@@ -3684,6 +4235,7 @@
 
 /* Small phone: maximum performance */
 @media (max-width: 480px) {
+
     /* Kill particle animation */
     .particle {
         animation: none;
@@ -3822,5 +4374,49 @@
     .community-content {
         grid-template-columns: 1fr;
         gap: 2.5rem;
+    }
+}
+
+/* ============================================================
+   DESKTOP IMAGE SIZE REDUCTION
+   Uses zoom (not transform) so the layout box actually shrinks.
+   No negative margins needed — zero overlap risk.
+   Desktop only (>1024px).
+   ============================================================ */
+@media (min-width: 1025px) {
+
+    /* Screenshot 1: Hexagonal multi-agent diagram — 700x700 → 420x420 */
+    .hexagon-container {
+        min-height: 300px;
+    }
+
+    .agent-hex-grid {
+        zoom: 0.6;
+    }
+
+    /* Screenshot 2: AI Orchestrator circular diagram — 800px → 480px */
+    .mas-nexus-diagram {
+        zoom: 0.6;
+    }
+
+    /* Screenshot 3 extra: MAS model industry hexagons — 500px → 375px */
+    .mas-model-diagram {
+        zoom: 0.75;
+    }
+
+    /* AI Solutions intro: match reference — heading higher & smaller, paragraph at bottom left-aligned */
+    .ai-intro-overlay {
+        padding-top: 6rem;
+    }
+
+    .ai-intro-overlay .section-title {
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        margin-bottom: 0.8rem;
+    }
+
+    .intro-text {
+        text-align: left;
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
 }
